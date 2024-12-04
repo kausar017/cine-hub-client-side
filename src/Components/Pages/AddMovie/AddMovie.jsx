@@ -1,7 +1,9 @@
-
+import { useState } from "react";
+import ReactStars from "react-rating-stars-component";
+import Swal from 'sweetalert2'
 const AddMovie = () => {
 
-    const handalSubmit = e => {
+    const handalSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
         const url = form.url.value;
@@ -9,54 +11,60 @@ const AddMovie = () => {
         const genre = form.genre.value;
         const duration = form.duration.value;
         const Release = form.Release.value;
-        const rating = form.rating.value;
         const Summary = form.Summary.value;
-        const movieData = { url, title, genre, duration, Release, rating, Summary }
-        console.log(movieData);
-        // validation
 
-        if (!url || !url.startsWith('http')) {
-            return alert("Please enter a valid URL.")
+        const movieData = { url, title, genre, duration, Release, rating, Summary };
+        console.log(movieData);
+
+        // validation
+        if (!url || !url.startsWith("http")) {
+            return Swal.fire("Please enter a valid URL.");
         }
         if (!title) {
-            return alert("Day cannot be empty.")
+            return Swal.fire("Title cannot be empty.");
         }
         if (!genre) {
-            return alert("Please select a genre.")
+            return Swal.fire("Please select a genre.");
         }
         if (!duration || duration < 60) {
-            return alert("Duration must be 60 minutes.")
+            return Swal.fire("Duration must be 60 minutes or more.");
         }
         if (!Release) {
-            return alert("Please select a release year.")
+            return Swal.fire("Please select a release year.");
         }
-        if (!rating) {
-            return alert('please provaide a rating')
+        if (!rating || rating === 0) {
+            return Swal.fire("Please provide a rating.");
         }
         if (!Summary || Summary.length < 10) {
-            return alert("Summary must be at least 10 characters long.")
+            return Swal.fire("Summary must be at least 10 characters long.");
         }
 
-        fetch('http://localhost:5000/movies', {
-            method: 'POST',
+        fetch("http://localhost:5000/movies", {
+            method: "POST",
             headers: {
-                'content-Type': 'application/json'
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(movieData)
+            body: JSON.stringify(movieData),
         })
-            .then(res => res.json())
-            .then(data => {
+            .then((res) => res.json())
+            .then((data) => {
                 console.log(data);
                 if (data.insertedId) {
-                    alert("Movie added successfully!")
+                    Swal.fire("Movie added successfully!")
                 }
+                form.reset()
             })
-            .catch(error => {
+            .catch((error) => {
                 console.log(error);
-                alert("Failed to add movie. Please try again.")
-            })
-    }
+                Swal.fire("Failed to add movie. Please try again.");
+            });
+    };
 
+    const [rating, setRating] = useState(0);
+
+    const ratingChanged = (newRating) => {
+        setRating(newRating);
+    };
 
     return (
         <div>
@@ -64,6 +72,7 @@ const AddMovie = () => {
                 <div className="card border-2 rounded-xl  w-full py-10 backdrop-blur-md">
                     <form onSubmit={handalSubmit} className="card-body">
                         <h1 className="text-center text-4xl font-bold text-white">Add Movie </h1>
+                        <div className="border-t-2 w-[20%] mx-auto"></div>
                         <div className="form-control grid md:grid-cols-2 md:space-x-2">
                             <div>
                                 <label className="label">
@@ -110,11 +119,18 @@ const AddMovie = () => {
                                     <option className="text-black" value="2021">2021</option>
                                 </select>
                             </div>
-                            <div>
-                                <label className="label">
-                                    <span className="label-text text-white">Rating</span>
-                                </label>
-                                <input type="number" name="rating" placeholder="Enter rating (0 to 10)" min="0" max="10" step="0.1" className="input input-bordered  text-white border-white w-full bg-white/10" />
+                            <div style={{ maxWidth: "400px", margin: "0 auto", textAlign: "center" }}>
+                                <h2 className="text-white">Rate the Movie</h2>
+                                <ReactStars
+                                    count={5}
+                                    onChange={ratingChanged}
+                                    size={40}
+                                    activeColor="#ffd700"
+                                    isHalf={true} // Allows half stars
+                                />
+                                <p className="text-white" style={{ marginTop: "10px", fontSize: "18px" }}>
+                                    Your Rating: <strong>{rating} Stars</strong>
+                                </p>
                             </div>
                         </div>
                         <div>
@@ -126,7 +142,7 @@ const AddMovie = () => {
                         </div>
 
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Add schedule</button>
+                            <button className="btn bg-transparent border text-white">Add Movie</button>
                         </div>
                     </form>
                 </div>
