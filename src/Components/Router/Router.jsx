@@ -9,6 +9,7 @@ import AllMovies from "../Pages/AllMovies/AllMovies";
 import AddMovie from "../Pages/AddMovie/AddMovie";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Details from "../Pages/Details/Details";
+import Favarite from "../Pages/Favarite/Favarite";
 
 const Router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ const Router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Bannar></Bannar> 
+        element: <Bannar></Bannar>
       },
       {
         path: '/allmovie',
@@ -33,6 +34,11 @@ const Router = createBrowserRouter([
       {
         path: '/addmovie',
         element: <AddMovie></AddMovie>
+      },
+      {
+        path: '/favarite',
+        element: <Favarite></Favarite>,
+        loader: () => fetch(`http://localhost:5000/favarite`)
       },
       {
         path: '/login',

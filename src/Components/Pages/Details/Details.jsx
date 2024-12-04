@@ -49,13 +49,30 @@ const Details = () => {
                 setsefress(refressData);
 
             }
-            // const remainingCoffees = loadedCoffees.filter(coffee => coffee._id !== _id);
-            // setLoadedCoffees(remainingCoffees);
         });
-
-
-
     }
+
+    const handaleFaborite = () => {
+        fetch(`http://localhost:5000/favarite`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(dataDetailes)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('Favorite Added:', data);
+                if (data.insertedId) {
+                    Swal.fire("Success!", "Movie added to favorites", "success");
+                    // navigate("/favarite"); 
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                Swal.fire("Error!", "Could not add movie to favorites", "error");
+            });
+    };
 
 
     return (
@@ -95,7 +112,7 @@ const Details = () => {
                             </div>
                             <div className='flex items-center space-x-3'>
                                 <button onClick={() => handalDelete(_id)} className="btn btn-sm bg-red-400 text-white"><MdDeleteOutline size={20} color='red'></MdDeleteOutline> Delete Movie</button>
-                                <button className="btn btn-sm bg-pink-400 text-white"><MdOutlineFavorite size={20} color='#F739B6'></MdOutlineFavorite> Add to Favorite</button>
+                                <button onClick={handaleFaborite} className="btn btn-sm bg-pink-400 text-white"><MdOutlineFavorite size={20} color='#F739B6'></MdOutlineFavorite> Add to Favorite</button>
                             </div>
                         </div>
                     </div>

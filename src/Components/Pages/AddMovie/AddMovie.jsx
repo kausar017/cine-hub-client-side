@@ -16,7 +16,8 @@ const AddMovie = () => {
         const movieData = { url, title, genre, duration, Release, rating, Summary };
         console.log(movieData);
 
-        // validation
+        // validation 
+        
         if (!url || !url.startsWith("http")) {
             return Swal.fire("Please enter a valid URL.");
         }
@@ -126,7 +127,7 @@ const AddMovie = () => {
                                     onChange={ratingChanged}
                                     size={40}
                                     activeColor="#ffd700"
-                                    isHalf={true} // Allows half stars
+                                    isHalf={true} 
                                 />
                                 <p className="text-white" style={{ marginTop: "10px", fontSize: "18px" }}>
                                     Your Rating: <strong>{rating} Stars</strong>
