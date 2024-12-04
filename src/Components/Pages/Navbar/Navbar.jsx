@@ -3,12 +3,12 @@ import './Navbar.css';
 import logo from '../../../assets/cina hub logo.png'
 const Navbar = () => {
     const link = <>
-        <div className="space-x-3">
-            <NavLink to={'/'} className="btn btn-sm bg-transparent"><button>Home</button></NavLink>
-            <NavLink to={'/'} className="btn btn-sm bg-transparent"><button>All Movies</button></NavLink>
-            <NavLink to={'/'} className="btn btn-sm bg-transparent"><button>Add Movie</button></NavLink>
-            <NavLink to={'/'} className="btn btn-sm bg-transparent"><button>My Favorites</button></NavLink>
-            <NavLink to={'/'} className="btn btn-sm bg-transparent"><button>extra route</button></NavLink>
+        <div className="space-x-3 flex max-sm:flex-col bg-transparent">
+            <NavLink to={'/'} className="btn btn-sm bg-transparent text-white"><button>Home</button></NavLink>
+            <NavLink to={'/allmovie'} className="btn btn-sm bg-transparent text-white"><button>All Movies</button></NavLink>
+            <NavLink to={'/addmovie'} className="btn btn-sm bg-transparent text-white"><button>Add Movie</button></NavLink>
+            <NavLink to={'/'} className="btn btn-sm bg-transparent text-white"><button>My Favorites</button></NavLink>
+            <NavLink to={'/'} className="btn btn-sm bg-transparent text-white"><button>extra route</button></NavLink>
         </div>
     </>
     return (
@@ -19,7 +19,7 @@ const Navbar = () => {
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
+                                className="h-8 w-8 text-white"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -32,7 +32,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             {link}
                         </ul>
                     </div>
@@ -47,7 +47,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end space-x-2">
                     <div ><img className="w-[50px] h-[50px] rounded-full cursor-pointer" src="https://i.postimg.cc/yxBM0XS4/user.png" alt="" /></div>
-                    <Link to={'/login'} className="btn btn-sm ">Login</Link>
+                    <Link to={'/login'} className="btn btn-sm bg-transparent text-white">Login</Link>
                 </div>
             </div>
         </div>

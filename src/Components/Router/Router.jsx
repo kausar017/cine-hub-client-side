@@ -5,6 +5,8 @@ import MainLayOut from "../LayOut/MainLayOut";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Bannar from "../Pages/Bannar/Bannar";
+import AllMovies from "../Pages/AllMovies/AllMovies";
+import AddMovie from "../Pages/AddMovie/AddMovie";
 
   const Router = createBrowserRouter([
     {
@@ -14,6 +16,14 @@ import Bannar from "../Pages/Bannar/Bannar";
         {
             path:'/',
             element: <Bannar></Bannar>
+        },
+        {
+            path: '/allmovie',
+            element: <AllMovies></AllMovies>
+        },
+        {
+            path: '/addmovie',
+            element: <AddMovie></AddMovie>
         },
         {
             path: '/login',

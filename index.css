@@ -1,0 +1,7 @@
+body {
+    background-image: url('/src/assets/carasol-1.jpg');
+    background-size: cover; /* পুরো স্ক্রিন জুড়ে ইমেজ কভার করবে */
+    background-repeat: no-repeat; /* ইমেজ রিপিট হবে না */
+    background-position: center; /* ইমেজকে সেন্টারে পজিশন করবে */
+  }
+  
