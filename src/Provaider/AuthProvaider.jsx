@@ -45,19 +45,7 @@ const AuthProvaider = ({ children }) => {
             })
         }
     }
-    // const managUser = (name, photo) => {
-    //     if (auth.currentUser) {
-    //         return updateProfile(auth.currentUser, {
-    //             displayName: name,
-    //             photoURL: photo
-    //         }).then(() => {
-    //             auth.currentUser.reload().then(() => {
-    //                 setuser({ ...auth.currentUser });
-    //             });
-    //         })
-    //     }
-    // }
-
+  
     const authInfo = {
         handaleGoogle,
         handaleGithub,
@@ -74,7 +62,7 @@ const AuthProvaider = ({ children }) => {
     }
     useEffect(() => {
         const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
-            console.log(currentUser);
+            // console.log(currentUser);
             if (currentUser) {
                 setUser(currentUser)
             }

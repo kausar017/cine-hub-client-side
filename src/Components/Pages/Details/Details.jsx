@@ -4,7 +4,8 @@ import { useLoaderData, useNavigate } from 'react-router-dom';
 import ReactStars from "react-rating-stars-component";
 import { MdDeleteOutline, MdOutlineFavorite } from 'react-icons/md';
 import Swal from 'sweetalert2';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../../Provaider/AuthProvaider';
 
 const Details = () => {
 
@@ -12,6 +13,11 @@ const Details = () => {
     // console.log(dataDetailes);
     const navigate = useNavigate()
     const [refress, setRefress] = useState()
+
+    const { user } = useContext(AuthContext)
+    const email = (user.email)
+    console.log(email);
+
     const { _id, url, title, genre, duration, Release, rating, Summary } = dataDetailes;
     // console.log(_id);
 
@@ -53,12 +59,16 @@ const Details = () => {
     }
 
     const handaleFaborite = () => {
+        const favariteData = {
+            ...dataDetailes,
+            useremail: email,
+        }
         fetch(`http://localhost:5000/favarite`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(dataDetailes)
+            body: JSON.stringify(favariteData)
         })
             .then(res => res.json())
             .then(data => {

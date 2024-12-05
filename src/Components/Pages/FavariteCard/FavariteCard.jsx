@@ -4,12 +4,15 @@ import { MdDeleteOutline } from 'react-icons/md';
 import ReactStars from "react-rating-stars-component";
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../../Provaider/AuthProvaider';
 
 
 const FavariteCard = ({ favarite, index, repress, setRepress }) => {
-
     // console.log(favarite);
-    const { _id, url, title, rating, day, genre, duration, Release, Summary } = favarite;
+
+   
+
+    const { _id, url, title, rating, day, genre, duration, Release, Summary} = favarite;
     // console.log(_id);
 
 
@@ -44,13 +47,12 @@ const FavariteCard = ({ favarite, index, repress, setRepress }) => {
                     })
                 const repressData = repress.filter(repres => repres._id !== _id);
                 console.log(repressData);
-                
-                setRepress(repressData) 
+
+                setRepress(repressData)
             }
 
         });
     }
-
 
     return (
         <div>
@@ -58,7 +60,7 @@ const FavariteCard = ({ favarite, index, repress, setRepress }) => {
                 <div className="card card-compact border-2 backdrop-blur-md  shadow-xl">
                     <figure>
                         <img
-                            className='p-2 rounded-lg'
+                            className='p-2 rounded-lg w-full md:h-[300px] object-cover'
                             src={url}
                             alt={url} />
                     </figure>

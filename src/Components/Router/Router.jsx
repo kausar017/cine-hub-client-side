@@ -10,6 +10,7 @@ import AddMovie from "../Pages/AddMovie/AddMovie";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Details from "../Pages/Details/Details";
 import Favarite from "../Pages/Favarite/Favarite";
+import FeaturedMovies from "../Pages/Featured Movies/FeaturedMovies";
 
 const Router = createBrowserRouter([
   {

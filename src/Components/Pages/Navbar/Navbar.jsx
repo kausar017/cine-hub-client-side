@@ -15,6 +15,7 @@ const Navbar = () => {
             <NavLink to={'/addmovie'} className="btn btn-sm bg-transparent text-white"><button>Add Movie</button></NavLink>
             <NavLink to={'/favarite'} className="btn btn-sm bg-transparent text-white"><button>My Favorites</button></NavLink>
             <NavLink to={'/'} className="btn btn-sm bg-transparent text-white"><button>extra route</button></NavLink>
+            <NavLink to={'/'} className="btn btn-sm bg-transparent text-white"><button>extra route</button></NavLink>
         </div>
     </>
     return (
