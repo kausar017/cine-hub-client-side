@@ -1,7 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import './Navbar.css';
 import logo from '../../../assets/cina hub logo.png'
+import { useContext } from "react";
+import { AuthContext } from "../../../Provaider/AuthProvaider";
 const Navbar = () => {
+
+    const { user, handalLogout } = useContext(AuthContext)
+
+
     const link = <>
         <div className="space-x-3 flex max-sm:flex-col bg-transparent">
             <NavLink to={'/'} className="btn btn-sm bg-transparent text-white"><button>Home</button></NavLink>
@@ -46,8 +52,19 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end space-x-2">
-                    <div ><img className="w-[50px] h-[50px] rounded-full cursor-pointer" src="https://i.postimg.cc/yxBM0XS4/user.png" alt="" /></div>
-                    <Link to={'/login'} className="btn btn-sm bg-transparent text-white">Login</Link>
+                    {
+                        user ? <div className="flex flex-col justify-center items-center">
+                            <img title={user.displayName} className="w-12 rounded-full" src={user?.photoURL} alt="" />
+                            <p className="text-white">{user.displayName}</p>
+                        </div> : <div ><img className="w-[50px] h-[50px] rounded-full cursor-pointer" src="https://i.postimg.cc/yxBM0XS4/user.png" alt="" /></div>
+
+                    }
+
+                    {
+                        user ? <Link to={'/'} onClick={handalLogout} className="btn btn-sm bg-transparent text-white">Logout</Link> : <Link to={'/login'} className="btn btn-sm bg-transparent text-white">Login</Link>
+                    }
+
+
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ const MovieCard = ({ moviedata }) => {
             <div className="card card-compact border-2 backdrop-blur-md  shadow-xl">
                 <figure>
                     <img
-                        className='p-2 rounded-lg'
+                        className='p-2 rounded-lg w-full object-cover md:h-[300px]'
                         src={url}
                         alt={url} />
                 </figure>

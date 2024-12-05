@@ -1,33 +1,54 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { MdDeleteOutline } from 'react-icons/md';
 import ReactStars from "react-rating-stars-component";
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
-const FavariteCard = ({ favarite, index }) => {
+const FavariteCard = ({ favarite, index, repress, setRepress }) => {
 
     // console.log(favarite);
     const { _id, url, title, rating, day, genre, duration, Release, Summary } = favarite;
     // console.log(_id);
-    const [repress, setRepress] = useState()
+
 
     const handalFavariteDelete = _id => {
         console.log('favarite movie delete', _id);
-        fetch(`http://localhost:5000/favarite/${_id}`, {
-            method: 'DELETE',
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
 
-            })
-            .catch(error => {
-                console.log(error);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/favarite/${_id}`, {
+                    method: 'DELETE',
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your Movie has been deleted.",
+                            icon: "success"
+                        });
+                    })
+                    .catch(error => {
+                        console.log(error);
 
-            })
-        const repressData = repress.filter(repres => repres._id !== _id);
-        setRepress(repressData)
+                    })
+                const repressData = repress.filter(repres => repres._id !== _id);
+                console.log(repressData);
+                
+                setRepress(repressData) 
+            }
+
+        });
     }
 
 

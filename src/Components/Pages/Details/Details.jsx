@@ -11,7 +11,7 @@ const Details = () => {
     const dataDetailes = useLoaderData()
     // console.log(dataDetailes);
     const navigate = useNavigate()
-    const [refress, setsefress] = useState()
+    const [refress, setRefress] = useState()
     const { _id, url, title, genre, duration, Release, rating, Summary } = dataDetailes;
     // console.log(_id);
 
@@ -46,7 +46,7 @@ const Details = () => {
                         console.log(error);
                     })
                 const refressData = refress.filter(refres => refres._id !== _id);
-                setsefress(refressData);
+                setRefress(refressData);
 
             }
         });
