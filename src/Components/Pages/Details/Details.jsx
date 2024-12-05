@@ -65,7 +65,10 @@ const Details = () => {
                 console.log('Favorite Added:', data);
                 if (data.insertedId) {
                     Swal.fire("Success!", "Movie added to favorites", "success");
-                    // navigate("/favarite"); 
+                    navigate("/favarite");
+                }
+                else if (data.insertedId = insertedId) {
+                    Swal.fire('Data All Rady Added');
                 }
             })
             .catch(error => {
@@ -87,7 +90,7 @@ const Details = () => {
                     <div className="hero-overlay bg-opacity-50"></div>
                     <div className="hero-content text-neutral-content">
                         <div className="">
-                            <h1 className="mb-5 text-5xl font-bold">Movie: {title}</h1>
+                            <h1 className="mb-5 text-4xl font-bold">Movie: {title}</h1>
                             <div className="mb-5">
                                 <p className='text-lg'><span className='font-bold'>Genre: </span> {genre}</p>
                                 <p className='text-lg'><span className='font-bold'>Duration: </span> {duration}</p>

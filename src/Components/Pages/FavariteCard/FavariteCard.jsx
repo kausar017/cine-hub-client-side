@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import { MdDeleteOutline } from 'react-icons/md';
 import ReactStars from "react-rating-stars-component";
 import { Link } from 'react-router-dom';
@@ -8,22 +9,25 @@ const FavariteCard = ({ favarite, index }) => {
 
     // console.log(favarite);
     const { _id, url, title, rating, day, genre, duration, Release, Summary } = favarite;
-    console.log(_id);
+    // console.log(_id);
+    const [repress, setRepress] = useState()
 
     const handalFavariteDelete = _id => {
         console.log('favarite movie delete', _id);
-        // fetch(`http://localhost:5000/favarite/${_id}`, {
-        //     method: 'DELETE',
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
+        fetch(`http://localhost:5000/favarite/${_id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
 
-        //     })
-        //     .catch(error => {
-        //         console.log(error);
+            })
+            .catch(error => {
+                console.log(error);
 
-        //     })
+            })
+        const repressData = repress.filter(repres => repres._id !== _id);
+        setRepress(repressData)
     }
 
 
