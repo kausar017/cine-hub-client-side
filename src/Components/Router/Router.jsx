@@ -11,6 +11,8 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Details from "../Pages/Details/Details";
 import Favarite from "../Pages/Favarite/Favarite";
 import FeaturedMovies from "../Pages/Featured Movies/FeaturedMovies";
+import PrivetRout from "../Pages/PrivetRout/PrivetRout";
+import UpdateMovie from "../Pages/UpdateMovie/UpdateMovie";
 
 const Router = createBrowserRouter([
   {
@@ -24,7 +26,9 @@ const Router = createBrowserRouter([
       },
       {
         path: '/allmovie',
-        element: <AllMovies></AllMovies>,
+        element: <PrivetRout>
+          <AllMovies></AllMovies>
+        </PrivetRout>,
         loader: () => fetch(`http://localhost:5000/movies`)
       },
       {
@@ -33,12 +37,17 @@ const Router = createBrowserRouter([
         loader: ({ params }) => fetch(`http://localhost:5000/movies/${params.id}`)
       },
       {
+        path: '/update/:id',
+        element: <UpdateMovie></UpdateMovie>,
+        loader: ({ params }) => fetch(`http://localhost:5000/movies/${params.id}`)
+      },
+      {
         path: '/addmovie',
-        element: <AddMovie></AddMovie>
+        element: <PrivetRout><AddMovie></AddMovie></PrivetRout>
       },
       {
         path: '/favarite',
-        element: <Favarite></Favarite>,
+        element: <PrivetRout><Favarite></Favarite></PrivetRout>,
         loader: () => fetch(`http://localhost:5000/favarite`)
       },
       {

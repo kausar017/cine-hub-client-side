@@ -10,8 +10,8 @@ const Favarite = () => {
     return (
         <div className="text-white pt-[100px] container mx-auto">
             <div>
-                <h1 className="text-white text-4xl font-bold text-center">Favarite Movie</h1>
-                <div className="border-t-2 w-[20%] mx-auto"></div>
+                <h1 className="text-white text-5xl font-bold text-center">Favarite Movie</h1>
+                <div className="border-t-2 w-[25%] mx-auto"></div>
             </div>
             <div>
                 {!repress || repress?.length == 0 ? (

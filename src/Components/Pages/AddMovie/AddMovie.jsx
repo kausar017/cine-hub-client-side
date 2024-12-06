@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import Swal from 'sweetalert2'
+import { AuthContext } from "../../../Provaider/AuthProvaider";
 const AddMovie = () => {
+
+    const { user } = useContext(AuthContext)
+    const email = (user.email)
 
     const handalSubmit = (e) => {
         e.preventDefault();
@@ -17,7 +21,7 @@ const AddMovie = () => {
         console.log(movieData);
 
         // validation 
-        
+
         if (!url || !url.startsWith("http")) {
             return Swal.fire("Please enter a valid URL.");
         }
@@ -39,13 +43,17 @@ const AddMovie = () => {
         if (!Summary || Summary.length < 10) {
             return Swal.fire("Summary must be at least 10 characters long.");
         }
+        const moviData = {
+            ...movieData,
+            userEmail: email
 
+        }
         fetch("http://localhost:5000/movies", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(movieData),
+            body: JSON.stringify(moviData),
         })
             .then((res) => res.json())
             .then((data) => {
@@ -127,7 +135,7 @@ const AddMovie = () => {
                                     onChange={ratingChanged}
                                     size={40}
                                     activeColor="#ffd700"
-                                    isHalf={true} 
+                                    isHalf={true}
                                 />
                                 <p className="text-white" style={{ marginTop: "10px", fontSize: "18px" }}>
                                     Your Rating: <strong>{rating} Stars</strong>

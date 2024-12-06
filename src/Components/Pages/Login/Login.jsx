@@ -56,28 +56,26 @@ const Login = () => {
                     <form onSubmit={handalSubmit} className="card-body">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text text-white">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="email" className="input input-bordered bg-transparent" required />
+                            <input type="email" name="email" placeholder="email" className="input input-bordered bg-transparent border-white text-white placeholder-white" required />
                         </div>
                         <div className="form-control ">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text text-white">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="password" className="input input-bordered bg-transparent" required />
-                            <label className="label">
-                                <Link to={'/forget'} className="label-text-alt link link-hover">Forgot password?</Link>
-                            </label>
+                            <input type="password" name="password" placeholder="password" className="input input-bordered border-white bg-transparent text-white placeholder-white" required />
+                            
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn ">Login</button>
+                            <button className="btn bg-transparent text-white hover:bg-white/20">Login</button>
                         </div>
                         <div className="flex justify-center gap-3">
-                            <button onClick={() => googleLogin()} className="btn btn-outline btn-sm text-white"><FcGoogle></FcGoogle>  Google Login</button>
-                            <button onClick={() => githubLogin()} className="btn btn-outline btn-sm text-white"><FaGithub color="white"></FaGithub> Github Login</button>
+                            <button onClick={() => googleLogin()} className="btn btn-outline btn-sm text-white hover:bg-white/30"><FcGoogle></FcGoogle>  Google Login</button>
+                            <button onClick={() => githubLogin()} className="btn btn-outline btn-sm text-white hover:bg-white/30"><FaGithub color="white"></FaGithub> Github Login</button>
                         </div>
-                        <p className="ml-4 my-4">
-                            New to this Website? please<Link className="ml-2 font-semibold underline" to={'/register'}>Reagister</Link>
+                        <p className="ml-4 my-4 text-white">
+                            New to this Website? please<Link className="ml-2 font-semibold underline hover:text-red-500" to={'/register'}>Reagister</Link>
                         </p>
                         {/* <ToastContainer /> */}
                     </form>

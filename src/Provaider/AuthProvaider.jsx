@@ -45,7 +45,7 @@ const AuthProvaider = ({ children }) => {
             })
         }
     }
-  
+
     const authInfo = {
         handaleGoogle,
         handaleGithub,

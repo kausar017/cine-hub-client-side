@@ -1,11 +1,12 @@
 
 import PropTypes from 'prop-types';
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import ReactStars from "react-rating-stars-component";
 import { MdDeleteOutline, MdOutlineFavorite } from 'react-icons/md';
 import Swal from 'sweetalert2';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../../Provaider/AuthProvaider';
+import { RxUpdate } from 'react-icons/rx';
 
 const Details = () => {
 
@@ -15,7 +16,7 @@ const Details = () => {
     const [refress, setRefress] = useState()
 
     const { user } = useContext(AuthContext)
-    const email = (user.email)
+    const email = (user?.email)
     console.log(email);
 
     const { _id, url, title, genre, duration, Release, rating, Summary } = dataDetailes;
@@ -124,7 +125,8 @@ const Details = () => {
                                 <p className='text-lg'><span className='font-bold'>Summary: </span> {Summary}</p>
                             </div>
                             <div className='flex items-center space-x-3'>
-                                <button onClick={() => handalDelete(_id)} className="btn btn-sm bg-red-400 text-white"><MdDeleteOutline size={20} color='red'></MdDeleteOutline> Delete Movie</button>
+                                <button onClick={() => handalDelete(_id)} title='please click the button or delete Movie' className="btn btn-sm bg-red-400 text-white"><MdDeleteOutline size={20} color='red'></MdDeleteOutline> Delete Movie</button>
+                                <Link to={`/update/${_id}`} className="btn btn-sm bg-pink-400 text-white"><RxUpdate size={20}></RxUpdate> Update</Link>
                                 <button onClick={handaleFaborite} className="btn btn-sm bg-pink-400 text-white"><MdOutlineFavorite size={20} color='#F739B6'></MdOutlineFavorite> Add to Favorite</button>
                             </div>
                         </div>

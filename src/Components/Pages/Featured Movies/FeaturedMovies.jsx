@@ -1,10 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router-dom";
+import Loader from "../Loader/Loader";
+import { AuthContext } from "../../../Provaider/AuthProvaider";
+import { SiDatabricks } from "react-icons/si";
 
 const FeaturedMovies = () => {
     const [movie, setMovie] = useState()
     // console.log(movie);
+    const { user } = useContext(AuthContext);
+
     const [loding, setLoading] = useState(true)
     useEffect(() => {
         fetch('http://localhost:5000/movies')
@@ -16,13 +21,28 @@ const FeaturedMovies = () => {
             .catch(error => console.error(error));
     }, [])
     if (loding) {
-        return <p className="text-white text-center text-xl"><span className="loading loading-bars w-[70px] text-white"></span></p>;
+        return <p className="text-white text-center text-xl"><Loader></Loader> </p>;
+    };
+
+    if (!movie || movie.length === 0) {
+        return (
+            <>
+                <div>
+                    <h1 className="text-center text-white text-5xl font-bold">Featured Movies</h1>
+                    <div className="border-t-2 w-[20%] mx-auto"></div>
+                </div>
+                <div className="text-center text-white font-bold text-3xl flex flex-col justify-center items-center py-10">
+                    <p>Data Not Found</p>
+                    <SiDatabricks size={100} color="white"></SiDatabricks>
+                </div>
+
+            </>
+        );
     }
+
     const sortingMovie = movie
         .sort((a, b) => b.rating - a.rating)
         .slice(0, 6)
-
-    // const { _id, url, title, genre, duration, Release, rating, Summary } = sortingMovie;
 
 
 
@@ -32,6 +52,7 @@ const FeaturedMovies = () => {
                 <h1 className="text-center text-white text-5xl font-bold">Featured Movies</h1>
                 <div className="border-t-2 w-[20%] mx-auto"></div>
             </div>
+
             <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-3 p-4 container mx-auto">
                 {
                     sortingMovie.map(movies =>
@@ -73,6 +94,13 @@ const FeaturedMovies = () => {
                         </div>)
                 }
             </div >
+
+            <div className="flex flex-col justify-center items-center py-3">
+                {
+                    user ? <p></p> : <Link to={'/allmovie'} className="btn border bg-transparent text-white hover:bg-pink-500/50">View All Movie</Link>
+                }
+
+            </div>
         </div>
 
     );
