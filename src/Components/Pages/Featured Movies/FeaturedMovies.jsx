@@ -1,14 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router-dom";
 import Loader from "../Loader/Loader";
-import { AuthContext } from "../../../Provaider/AuthProvaider";
 import { SiDatabricks } from "react-icons/si";
 
 const FeaturedMovies = () => {
     const [movie, setMovie] = useState()
     // console.log(movie);
-    const { user } = useContext(AuthContext);
 
     const [loding, setLoading] = useState(true)
     useEffect(() => {
@@ -39,10 +37,6 @@ const FeaturedMovies = () => {
             </>
         );
     }
-
-    // const sortingMovie = movie
-    //     .sort((a, b) => b.rating - a.rating)
-    //     .slice(0, 6)
 
 
 
@@ -97,7 +91,7 @@ const FeaturedMovies = () => {
 
             <div className="flex flex-col justify-center items-center py-3">
                 {
-                    user ? <p></p> : <Link to={'/allmovie'} className="btn border bg-transparent text-white hover:bg-pink-500/50">View All Movie</Link>
+                    movie ? <Link to={'/allmovie'} className="btn border bg-transparent text-white hover:bg-pink-500/50">View All Movie</Link> : <p></p>
                 }
 
             </div>

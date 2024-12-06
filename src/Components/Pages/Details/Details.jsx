@@ -90,7 +90,7 @@ const Details = () => {
 
 
     return (
-        <div className='text-white pt-[100px] p-3 container mx-auto'>
+        <div className='text-white pt-[150px] p-3 container mx-auto'>
             <div>
                 <div
                     className="hero min-h-[600px]"

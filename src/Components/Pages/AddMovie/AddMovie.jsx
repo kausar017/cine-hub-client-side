@@ -21,7 +21,6 @@ const AddMovie = () => {
         console.log(movieData);
 
         // validation 
-
         if (!url || !url.startsWith("http")) {
             return Swal.fire("Please enter a valid URL.");
         }
@@ -77,7 +76,7 @@ const AddMovie = () => {
 
     return (
         <div>
-            <div className="flex flex-col justify-center pt-24 items-center min-h-screen container mx-auto p-3">
+            <div className="flex flex-col justify-center pt-32 items-center min-h-screen container mx-auto p-3">
                 <div className="card border-2 rounded-xl  w-full py-10 backdrop-blur-md">
                     <form onSubmit={handalSubmit} className="card-body">
                         <h1 className="text-center text-4xl font-bold text-white">Add Movie </h1>

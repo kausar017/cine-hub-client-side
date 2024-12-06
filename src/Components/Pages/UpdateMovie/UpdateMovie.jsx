@@ -24,6 +24,29 @@ const UpdateMovie = () => {
         const Release = form.Release.value;
         const Summary = form.Summary.value;
 
+        // validation 
+        if (!url || !url.startsWith("http")) {
+            return Swal.fire("Please enter a valid URL.");
+        }
+        if (!title) {
+            return Swal.fire("Title cannot be empty.");
+        }
+        if (!genre) {
+            return Swal.fire("Please select a genre.");
+        }
+        if (!duration || duration < 60) {
+            return Swal.fire("Duration must be 60 minutes or more.");
+        }
+        if (!Release) {
+            return Swal.fire("Please select a release year.");
+        }
+        if (!rating || rating === 0) {
+            return Swal.fire("Please provide a rating.");
+        }
+        if (!Summary || Summary.length < 10) {
+            return Swal.fire("Summary must be at least 10 characters long.");
+        }
+
         const movieData = { url, title, genre, duration, Release, rating, Summary };
         // console.log(movieData);
         fetch(`http://localhost:5000/movies/${_id}`, {
@@ -60,8 +83,8 @@ const UpdateMovie = () => {
     return (
         <div>
             <div>
-                <div className="flex flex-col justify-center pt-24 items-center min-h-screen container mx-auto p-3">
-                    <div className="card border-2 rounded-xl  w-full py-10 backdrop-blur-md">
+                <div className="flex flex-col justify-center pt-32 items-center min-h-screen container mx-auto p-3">
+                    <div className="card border-2 rounded-xl  w-full py-5 backdrop-blur-md">
                         <form onSubmit={handalUpdate} className="card-body">
                             <h1 className="text-center text-4xl font-bold text-white">Update Movie </h1>
                             <div className="border-t-2 w-[20%] mx-auto"></div>

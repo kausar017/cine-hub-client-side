@@ -8,7 +8,7 @@ const Favarite = () => {
     const [repress, setRepress] = useState(favariteData);
 
     return (
-        <div className="text-white pt-[100px] container mx-auto">
+        <div className="text-white pt-[120px] container mx-auto">
             <div>
                 <h1 className="text-white text-5xl font-bold text-center">Favarite Movie</h1>
                 <div className="border-t-2 w-[25%] mx-auto"></div>

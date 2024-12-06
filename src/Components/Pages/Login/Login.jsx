@@ -50,7 +50,7 @@ const Login = () => {
 
     return (
         <div>
-            <div className="flex flex-col justify-center items-center pt-32 min-h-[600px]">
+            <div className="flex flex-col justify-center items-center pt-36 min-h-[600px]">
                 <div className="card border-2 w-full max-w-md shrink-0 shadow-xl backdrop-blur-md">
                     <h1 className="text-5xl font-bold text-center mt-5 text-white">Login now!</h1>
                     <form onSubmit={handalSubmit} className="card-body">

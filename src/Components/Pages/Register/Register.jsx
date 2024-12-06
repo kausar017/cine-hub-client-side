@@ -15,16 +15,16 @@ const Register = () => {
         const lengthPattern = /.{6,}/;
 
         if (!uppercasePattern.test(password)) {
-           return Swal.fire("Password must contain at least one uppercase letter.");
-             
+            return Swal.fire("Password must contain at least one uppercase letter.");
+
         }
         if (!lowercasePattern.test(password)) {
-           return Swal.fire("Password must contain at least one lowercase letter.");
-             
+            return Swal.fire("Password must contain at least one lowercase letter.");
+
         }
         if (!lengthPattern.test(password)) {
-           return Swal.fire("Password must be at least 6 characters long.");
-             
+            return Swal.fire("Password must be at least 6 characters long.");
+
         }
 
     }
@@ -76,26 +76,13 @@ const Register = () => {
                         </label>
                         <input type="text" name="name" placeholder="Enter your name" className="input bg-transparent input-bordered border-white placeholder-white" />
                     </div>
-                    {/* {
-                        error.name && (
-                            <label className="label">
-                                <span className="text-xs text-red-500">{error.name}</span>
-                            </label>
-                        )
-                    } */}
+
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text text-white">Email</span>
                         </label>
                         <input type="email" name="email" placeholder="email" className="input bg-transparent input-bordered border-white placeholder-white" />
                     </div>
-                    {/* {
-                        error.email && (
-                            <label className="label">
-                                <span className="text-xs text-red-500">{error.email}</span>
-                            </label>
-                        )
-                    } */}
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text text-white">Photo URL</span>
@@ -110,7 +97,6 @@ const Register = () => {
                     </div>
                     <div className="form-control mt-6">
                         <button type="submit" className="btn bg-transparent text-white hover:bg-white/20">Register </button>
-                        {/* <ToastContainer /> */}
                     </div>
                     <p className="ml-4 my-4 text-white">
                         Already have an account? Please <Link className="ml-2 font-semibold underline hover:text-red-600" to={'/login'}>Login</Link>
