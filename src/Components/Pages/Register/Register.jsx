@@ -74,26 +74,26 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text text-white">Name</span>
                         </label>
-                        <input type="text" name="name" placeholder="Enter your name" className="input bg-transparent input-bordered border-white placeholder-white" />
+                        <input type="text" name="name" placeholder="Enter your name" className="input text-white placeholder:text-white bg-transparent input-bordered border-white placeholder-white" />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text text-white">Email</span>
                         </label>
-                        <input type="email" name="email" placeholder="email" className="input bg-transparent input-bordered border-white placeholder-white" />
+                        <input type="email" name="email" placeholder="email" className="input text-white placeholder:text-white bg-transparent input-bordered border-white placeholder-white" />
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text text-white">Photo URL</span>
                         </label>
-                        <input type="url" name="photo" placeholder="Enter your Photo url" className="input bg-transparent input-bordered border-white placeholder-white" />
+                        <input type="url" name="photo" placeholder="Enter your Photo url" className="input text-white placeholder:text-white bg-transparent input-bordered border-white placeholder-white" />
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text text-white">Password</span>
                         </label>
-                        <input type="password" name="password" placeholder="password" className="input bg-transparent input-bordered border-white placeholder-white" />
+                        <input type="password" name="password" placeholder="password" className="input text-white placeholder:text-white bg-transparent input-bordered border-white placeholder-white" />
                     </div>
                     <div className="form-control mt-6">
                         <button type="submit" className="btn bg-transparent text-white hover:bg-white/20">Register </button>
