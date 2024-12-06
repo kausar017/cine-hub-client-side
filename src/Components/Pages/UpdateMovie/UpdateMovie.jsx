@@ -1,16 +1,17 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 const UpdateMovie = () => {
 
 
     const { id } = useParams()
     // console.log(id);
-    
+
     const updateData = useLoaderData()
     console.log(updateData);
-    const { url, title, genre, duration, Release, rating: ret, Summary } = updateData
+    const { _id, url, title, genre, duration, Release, rating: ret, Summary } = updateData
 
 
     const handalUpdate = e => {
@@ -24,7 +25,31 @@ const UpdateMovie = () => {
         const Summary = form.Summary.value;
 
         const movieData = { url, title, genre, duration, Release, rating, Summary };
-        console.log(movieData);
+        // console.log(movieData);
+        fetch(`http://localhost:5000/movies/${_id}`, {
+            method: 'PUT',
+            headers: {
+                "content-type": 'application/json'
+            },
+            body: JSON.stringify(movieData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'success!',
+                        text: 'Movie Updated successfuly ',
+                        icon: 'success',
+                        confirmButtonText: 'close'
+                    })
+                }
+            })
+            .catch(error => {
+                console.log(error);
+
+            })
     }
 
     const [rating, setRating] = useState(ret || 0);

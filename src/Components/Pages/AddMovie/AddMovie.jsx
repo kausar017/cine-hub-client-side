@@ -151,7 +151,7 @@ const AddMovie = () => {
                         </div>
 
                         <div className="form-control mt-6">
-                            <button className="btn bg-transparent border text-white">Add Movie</button>
+                            <button className="btn bg-transparent border text-white hover:bg-white/30">Add Movie</button>
                         </div>
                     </form>
                 </div>
