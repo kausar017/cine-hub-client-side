@@ -14,12 +14,12 @@ const Navbar = () => {
             <NavLink to={'/allmovie'} className="btn btn-sm bg-transparent text-white"><button>All Movies</button></NavLink>
             <NavLink to={'/addmovie'} className="btn btn-sm bg-transparent text-white"><button>Add Movie</button></NavLink>
             <NavLink to={'/favarite'} className="btn btn-sm bg-transparent text-white"><button>My Favorites</button></NavLink>
-            <NavLink to={'/'} className="btn btn-sm bg-transparent text-white"><button>extra route</button></NavLink>
+            <NavLink to={'/'} className="btn btn-sm bg-transparent text-white"><button>About</button></NavLink>
             <NavLink to={'/'} className="btn btn-sm bg-transparent text-white"><button>extra route</button></NavLink>
         </div>
     </>
     return (
-        <div className="bg-transparent z-10 fixed w-full">
+        <div className="bg-transparent z-10 fixed w-full backdrop-blur-xl">
             <div className="navbar container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">

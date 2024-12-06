@@ -40,9 +40,9 @@ const FeaturedMovies = () => {
         );
     }
 
-    const sortingMovie = movie
-        .sort((a, b) => b.rating - a.rating)
-        .slice(0, 6)
+    // const sortingMovie = movie
+    //     .sort((a, b) => b.rating - a.rating)
+    //     .slice(0, 6)
 
 
 
@@ -55,7 +55,7 @@ const FeaturedMovies = () => {
 
             <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-3 p-4 container mx-auto">
                 {
-                    sortingMovie.map(movies =>
+                    movie.slice(0, 6).map(movies =>
                         <div key={movies._id}>
                             <div className="card card-compact border-2 backdrop-blur-md  shadow-xl">
                                 <figure>
