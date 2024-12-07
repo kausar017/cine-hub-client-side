@@ -1,11 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 import FavariteCard from "../FavariteCard/FavariteCard";
 import { SiDatabricks } from "react-icons/si";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../Provaider/AuthProvaider";
 
 const Favarite = () => {
+    const { user } = useContext(AuthContext)
     const favariteData = useLoaderData();
     const [repress, setRepress] = useState(favariteData);
+
+    const filtaredData = repress.filter(data => data.email == user.email)
 
     return (
         <div className=" pt-[120px] container mx-auto">
@@ -14,7 +18,7 @@ const Favarite = () => {
                 <div className="border-t-2 w-[25%] mx-auto"></div>
             </div>
             <div>
-                {!repress || repress?.length == 0 ? (
+                {!filtaredData || filtaredData?.length == 0 ? (
                     <div className="text-4xl  font-bold text-center pt-10 flex flex-col justify-center items-center">
                         Data Not Found
                         <SiDatabricks size={200} color="purple" />
@@ -22,7 +26,7 @@ const Favarite = () => {
                 ) : (
                     <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-3 p-4">
                         {
-                            repress?.map((favarite, index) => <FavariteCard key={favarite._id} favarite={favarite} repress={repress} setRepress={setRepress}></FavariteCard>)
+                            filtaredData?.map((favarite, index) => <FavariteCard key={favarite._id} favarite={favarite} repress={repress} setRepress={setRepress}></FavariteCard>)
                         }
                     </div>
                 )}

@@ -2,7 +2,7 @@
     {
       "id": 1,
       "name": "Leonardo DiCaprio",
-      "image": "https://example.com/images/leonardo.jpg",
+      "image": "https://i.ibb.co.com/M9pLd1p/Getty-Images-1192757306.jpg",
       "famousMovies": ["Inception", "Titanic", "The Revenant"],
       "age": 49,
       "nationality": "American"
@@ -10,7 +10,7 @@
     {
       "id": 2,
       "name": "Scarlett Johansson",
-      "image": "https://example.com/images/scarlett.jpg",
+      "image": "https://i.ibb.co.com/LpM8J9b/gettyimages-1707035409.jpg",
       "famousMovies": ["Black Widow", "Marriage Story", "Lost in Translation"],
       "age": 39,
       "nationality": "American"
@@ -18,7 +18,7 @@
     {
       "id": 3,
       "name": "Will Smith",
-      "image": "https://example.com/images/will.jpg",
+      "image": "https://i.ibb.co.com/L1q6kZ0/Will-Smith-getty-H-2023.jpg",
       "famousMovies": ["Men in Black", "Pursuit of Happyness", "King Richard"],
       "age": 55,
       "nationality": "American"
@@ -26,7 +26,7 @@
     {
       "id": 4,
       "name": "Emma Watson",
-      "image": "https://example.com/images/emma.jpg",
+      "image": "https://i.ibb.co.com/FY6VxCd/images-q-tbn-ANd9-Gc-So-TSVe-T-CV3-Q8yfsejvl-NLpy-FOd-Lnten-Kdw-s.jpg",
       "famousMovies": ["Harry Potter", "Beauty and the Beast", "Little Women"],
       "age": 34,
       "nationality": "British"
@@ -34,7 +34,7 @@
     {
       "id": 5,
       "name": "Dwayne Johnson",
-      "image": "https://example.com/images/dwayne.jpg",
+      "image": "https://i.ibb.co.com/8cKnLWZ/INV-Dwayne-Johnson-Getty-Images-2066801583-6476348964de431893b992034a3fb2e4.jpg",
       "famousMovies": ["Fast & Furious", "Jumanji", "Black Adam"],
       "age": 52,
       "nationality": "American"
@@ -42,7 +42,7 @@
     {
       "id": 6,
       "name": "Gal Gadot",
-      "image": "https://example.com/images/gal.jpg",
+      "image": "https://i.ibb.co.com/vV34VP1/gal-gadot-red-carpet.jpg",
       "famousMovies": ["Wonder Woman", "Justice League", "Red Notice"],
       "age": 39,
       "nationality": "Israeli"
@@ -50,7 +50,7 @@
     {
       "id": 7,
       "name": "Chris Hemsworth",
-      "image": "https://example.com/images/chris.jpg",
+      "image": "https://i.ibb.co.com/92D8W3Z/Getty-Images-2151775094.jpg",
       "famousMovies": ["Thor", "Extraction", "Avengers"],
       "age": 41,
       "nationality": "Australian"
@@ -58,7 +58,7 @@
     {
       "id": 8,
       "name": "Robert Downey Jr.",
-      "image": "https://example.com/images/robert.jpg",
+      "image": "https://i.ibb.co.com/3WSf0tg/Getty-Images-803015182-H-2023.jpg",
       "famousMovies": ["Iron Man", "Sherlock Holmes", "Avengers"],
       "age": 59,
       "nationality": "American"
@@ -66,7 +66,7 @@
     {
       "id": 9,
       "name": "Jennifer Lawrence",
-      "image": "https://example.com/images/jennifer.jpg",
+      "image": "https://i.ibb.co.com/3WSf0tg/Getty-Images-803015182-H-2023.jpg",
       "famousMovies": ["Hunger Games", "Silver Linings Playbook", "Passengers"],
       "age": 34,
       "nationality": "American"
@@ -74,7 +74,7 @@
     {
       "id": 10,
       "name": "Tom Cruise",
-      "image": "https://example.com/images/tom.jpg",
+      "image": "https://i.ibb.co.com/z4qDQ1D/images-q-tbn-ANd9-Gc-TSkb-Dc-Oy003-Oj-En-YByh-L8stksn1v6v-Oy0-A-s.jpg",
       "famousMovies": ["Mission Impossible", "Top Gun", "Edge of Tomorrow"],
       "age": 61,
       "nationality": "American"

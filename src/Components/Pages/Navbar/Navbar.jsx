@@ -31,8 +31,7 @@ const Navbar = () => {
             <NavLink to={'/allmovie'} className="btn btn-sm hover:bg-purple-500 btn-outline text-white "><button>All Movies</button></NavLink>
             <NavLink to={'/addmovie'} className="btn btn-sm hover:bg-purple-500 btn-outline text-white "><button>Add Movie</button></NavLink>
             <NavLink to={'/favarite'} className="btn btn-sm hover:bg-purple-500 btn-outline text-white "><button>My Favorites</button></NavLink>
-            <NavLink to={'/about'} className="btn btn-sm hover:bg-purple-500 btn-outline text-white "><button>About</button></NavLink>
-            <NavLink to={'/actors'} className="btn btn-sm hover:bg-purple-500 btn-outline text-white "><button>Popular Actors</button></NavLink>
+           
         </div>
     </>
     return (

@@ -10,8 +10,6 @@ import { AuthContext } from '../../../Provaider/AuthProvaider';
 const FavariteCard = ({ favarite, index, repress, setRepress }) => {
     // console.log(favarite);
 
-   
-
     const { _id, url, title, rating, day, genre, duration, Release, Summary} = favarite;
     // console.log(_id);
 

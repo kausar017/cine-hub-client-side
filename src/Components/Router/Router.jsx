@@ -53,14 +53,6 @@ const Router = createBrowserRouter([
         loader: () => fetch(`https://cenehub.vercel.app/favarite`)
       },
       {
-        path: '/about',
-        element: <AboutePage></AboutePage>,
-      },
-      {
-        path: '/actors',
-        element: <PopularActors></PopularActors>
-      },
-      {
         path: '/login',
         element: <Login></Login>
       },

@@ -10,6 +10,8 @@ import image2 from '../../../assets/carasol-2.jpg'
 import image3 from '../../../assets/carasol-3.webp'
 import image4 from '../../../assets/carasol-4.jpg'
 import FeaturedMovies from '../Featured Movies/FeaturedMovies';
+import AboutePage from '../Aboute Page/AboutePage';
+import PopularActors from '../PopularActors/PopularActors';
 
 const Bannar = () => {
     return (
@@ -35,7 +37,15 @@ const Bannar = () => {
                     <SwiperSlide><img className='h-[80vh] w-full max-sm:object-cover' src={image4} alt="Slide 4" /></SwiperSlide>
                 </Swiper>
             </div>
-            <FeaturedMovies></FeaturedMovies>
+            <div>
+                <FeaturedMovies></FeaturedMovies>
+            </div>
+            <div>
+                <AboutePage></AboutePage>
+            </div>
+            <div>
+                <PopularActors></PopularActors>
+            </div>
         </>
 
     ); object - cover

@@ -1,7 +1,7 @@
 
 const AboutePage = () => {
     return (
-        <div className="pt-[118px]">
+        <div className="pt-[10px]">
             <section className="p-6 container mx-auto min-h-[800px]">
                 <h2 className="text-5xl font-bold mb-4 text-center text-purple-500">About Us</h2>
                 <p className="text-lg mb-6 text-center max-w-[800px] mx-auto">
@@ -55,10 +55,6 @@ const AboutePage = () => {
                             </ul>
                         </div>
                     </div>
-
-
-                    <h3 className="text-xl font-semibold mb-2">Key Features</h3>
-
                 </div>
 
             </section>

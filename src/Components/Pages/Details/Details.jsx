@@ -16,11 +16,12 @@ const Details = () => {
     const [refress, setRefress] = useState()
 
     const { user } = useContext(AuthContext)
-    const email = (user?.email)
+    const email = user?.email
     console.log(email);
 
     const { _id, url, title, genre, duration, Release, rating, Summary } = dataDetailes;
     // console.log(_id);
+    const favarite = { url, title, genre, duration, Release, rating, Summary, email }
 
 
     const handalDelete = (_id) => {
@@ -60,16 +61,13 @@ const Details = () => {
     }
 
     const handaleFaborite = () => {
-        const favariteData = {
-            ...dataDetailes,
-            useremail: email,
-        }
+       
         fetch(`https://cenehub.vercel.app/favarite`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(favariteData)
+            body: JSON.stringify(favarite)
         })
             .then(res => res.json())
             .then(data => {
