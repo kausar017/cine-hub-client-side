@@ -14,6 +14,7 @@ import FeaturedMovies from "../Pages/Featured Movies/FeaturedMovies";
 import PrivetRout from "../Pages/PrivetRout/PrivetRout";
 import UpdateMovie from "../Pages/UpdateMovie/UpdateMovie";
 import AboutePage from "../Pages/Aboute Page/AboutePage";
+import PopularActors from "../Pages/PopularActors/PopularActors";
 
 const Router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const Router = createBrowserRouter([
       {
         path: '/about',
         element: <AboutePage></AboutePage>,
+      },
+      {
+        path: '/actors',
+        element: <PopularActors></PopularActors>
       },
       {
         path: '/login',

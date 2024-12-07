@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "name": "Leonardo DiCaprio",
+      "image": "https://example.com/images/leonardo.jpg",
+      "famousMovies": ["Inception", "Titanic", "The Revenant"],
+      "age": 49,
+      "nationality": "American"
+    },
+    {
+      "id": 2,
+      "name": "Scarlett Johansson",
+      "image": "https://example.com/images/scarlett.jpg",
+      "famousMovies": ["Black Widow", "Marriage Story", "Lost in Translation"],
+      "age": 39,
+      "nationality": "American"
+    },
+    {
+      "id": 3,
+      "name": "Will Smith",
+      "image": "https://example.com/images/will.jpg",
+      "famousMovies": ["Men in Black", "Pursuit of Happyness", "King Richard"],
+      "age": 55,
+      "nationality": "American"
+    },
+    {
+      "id": 4,
+      "name": "Emma Watson",
+      "image": "https://example.com/images/emma.jpg",
+      "famousMovies": ["Harry Potter", "Beauty and the Beast", "Little Women"],
+      "age": 34,
+      "nationality": "British"
+    },
+    {
+      "id": 5,
+      "name": "Dwayne Johnson",
+      "image": "https://example.com/images/dwayne.jpg",
+      "famousMovies": ["Fast & Furious", "Jumanji", "Black Adam"],
+      "age": 52,
+      "nationality": "American"
+    },
+    {
+      "id": 6,
+      "name": "Gal Gadot",
+      "image": "https://example.com/images/gal.jpg",
+      "famousMovies": ["Wonder Woman", "Justice League", "Red Notice"],
+      "age": 39,
+      "nationality": "Israeli"
+    },
+    {
+      "id": 7,
+      "name": "Chris Hemsworth",
+      "image": "https://example.com/images/chris.jpg",
+      "famousMovies": ["Thor", "Extraction", "Avengers"],
+      "age": 41,
+      "nationality": "Australian"
+    },
+    {
+      "id": 8,
+      "name": "Robert Downey Jr.",
+      "image": "https://example.com/images/robert.jpg",
+      "famousMovies": ["Iron Man", "Sherlock Holmes", "Avengers"],
+      "age": 59,
+      "nationality": "American"
+    },
+    {
+      "id": 9,
+      "name": "Jennifer Lawrence",
+      "image": "https://example.com/images/jennifer.jpg",
+      "famousMovies": ["Hunger Games", "Silver Linings Playbook", "Passengers"],
+      "age": 34,
+      "nationality": "American"
+    },
+    {
+      "id": 10,
+      "name": "Tom Cruise",
+      "image": "https://example.com/images/tom.jpg",
+      "famousMovies": ["Mission Impossible", "Top Gun", "Edge of Tomorrow"],
+      "age": 61,
+      "nationality": "American"
+    }
+  ]
+  
