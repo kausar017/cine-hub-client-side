@@ -29,7 +29,7 @@ const FavariteCard = ({ favarite, index, repress, setRepress }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/favarite/${_id}`, {
+                fetch(`https://cenehub.vercel.app/favarite/${_id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
@@ -57,14 +57,14 @@ const FavariteCard = ({ favarite, index, repress, setRepress }) => {
     return (
         <div>
             <div className='container mx-auto'>
-                <div className="card card-compact border-2 backdrop-blur-md  shadow-xl">
+                <div className="card card-compact border-2 backdrop-blur-md transition hover:scale-105 overflow-hidden  shadow-xl">
                     <figure>
                         <img
-                            className='p-2 rounded-lg w-full md:h-[300px] object-cover'
+                            className='p-2 rounded-lg w-full md:h-[300px] object-cover transition hover:scale-150 overflow-hidden'
                             src={url}
                             alt={url} />
                     </figure>
-                    <div className="card-body text-white">
+                    <div className="card-body text-purple-400">
                         <h2 className="card-title">Movie Name: {title}</h2>
                         <p>Genre: {genre}</p>
                         <p>Duration: {duration} Minit</p>
@@ -87,7 +87,7 @@ const FavariteCard = ({ favarite, index, repress, setRepress }) => {
                         </div>
                         <p>Summary: {Summary}</p>
                         <div className="card-actions justify-end">
-                            <Link onClick={() => handalFavariteDelete(_id)} className="btn btn-sm bg-transparent border text-white hover:bg-[#F739B6]"><MdDeleteOutline size={20} color='red'></MdDeleteOutline> Delete</Link>
+                            <Link onClick={() => handalFavariteDelete(_id)} className="btn btn-sm btn-outline  hover:bg-[#F739B6]"><MdDeleteOutline size={20} color='red'></MdDeleteOutline> Delete</Link>
                         </div>
                     </div>
                 </div>

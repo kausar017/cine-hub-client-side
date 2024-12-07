@@ -13,6 +13,7 @@ import Favarite from "../Pages/Favarite/Favarite";
 import FeaturedMovies from "../Pages/Featured Movies/FeaturedMovies";
 import PrivetRout from "../Pages/PrivetRout/PrivetRout";
 import UpdateMovie from "../Pages/UpdateMovie/UpdateMovie";
+import AboutePage from "../Pages/Aboute Page/AboutePage";
 
 const Router = createBrowserRouter([
   {
@@ -29,17 +30,17 @@ const Router = createBrowserRouter([
         element: <PrivetRout>
           <AllMovies></AllMovies>
         </PrivetRout>,
-        loader: () => fetch(`http://localhost:5000/movies`)
+        loader: () => fetch(`https://cenehub.vercel.app/movies`)
       },
       {
         path: '/detals/:id',
         element: <Details></Details>,
-        loader: ({ params }) => fetch(`http://localhost:5000/movies/${params.id}`)
+        loader: ({ params }) => fetch(`https://cenehub.vercel.app/movies/${params.id}`)
       },
       {
         path: '/update/:id',
         element: <PrivetRout><UpdateMovie></UpdateMovie></PrivetRout>,
-        loader: ({ params }) => fetch(`http://localhost:5000/movies/${params.id}`)
+        loader: ({ params }) => fetch(`https://cenehub.vercel.app/movies/${params.id}`)
       },
       {
         path: '/addmovie',
@@ -48,7 +49,11 @@ const Router = createBrowserRouter([
       {
         path: '/favarite',
         element: <PrivetRout><Favarite></Favarite></PrivetRout>,
-        loader: () => fetch(`http://localhost:5000/favarite`)
+        loader: () => fetch(`https://cenehub.vercel.app/favarite`)
+      },
+      {
+        path: '/about',
+        element: <AboutePage></AboutePage>,
       },
       {
         path: '/login',

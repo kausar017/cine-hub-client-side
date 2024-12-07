@@ -47,7 +47,7 @@ const AddMovie = () => {
             userEmail: email
 
         }
-        fetch("http://localhost:5000/movies", {
+        fetch("https://cenehub.vercel.app/movies", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -76,55 +76,55 @@ const AddMovie = () => {
 
     return (
         <div>
-            <div className="flex flex-col justify-center pt-32 items-center min-h-screen container mx-auto p-3">
-                <div className="card border-2 rounded-xl  w-full py-10 backdrop-blur-md">
+            <div className="flex flex-col justify-center pt-32 items-center  md:w-8/12 mx-auto p-3">
+                <div className="card border-2 rounded-xl  w-full py-10 bg-purple-400">
                     <form onSubmit={handalSubmit} className="card-body">
-                        <h1 className="text-center text-4xl font-bold text-white">Add Movie </h1>
+                        <h1 className="text-center text-4xl font-bold text-purple-900">Add Movie </h1>
                         <div className="border-t-2 w-[20%] mx-auto"></div>
                         <div className="form-control grid md:grid-cols-2 md:space-x-2">
                             <div>
                                 <label className="label">
                                     <span className="label-text text-white">Movie Poster (URL)</span>
                                 </label>
-                                <input type="url" name="url" placeholder="Movie Poster" className="input input-bordered text-white border-white w-full bg-white/10" />
+                                <input type="url" name="url" placeholder="Movie Poster" className="input input-bordered text-purple-500  w-full " />
                             </div>
                             <div>
                                 <label className="label">
                                     <span className="label-text text-white">Movie Title</span>
                                 </label>
-                                <input type="text" name="title" placeholder="Enter movie title" className="input input-bordered  text-white border-white w-full bg-white/10" />
+                                <input type="text" name="title" placeholder="Enter movie title" className="input input-bordered  text-white  w-full " />
                             </div>
                         </div>
 
                         <div className="form-control grid md:grid-cols-2 items-center md:space-x-2">
                             <div>
                                 <label className=" text-white">Genre</label>
-                                <select id="dayInput" name="genre" className="input input-bordered  text-white border-white w-full bg-white/10">
-                                    <option className="text-black" value="">Select a genre</option>
-                                    <option className="text-black" value="Comedy">Comedy</option>
-                                    <option className="text-black" value="Drama">Drama</option>
-                                    <option className="text-black" value="Horror">Horror</option>
-                                    <option className="text-black" value="Action">Action</option>
-                                    <option className="text-black" value="Romance">Romance</option>
+                                <select id="dayInput" name="genre" className="input input-bordered    w-full ">
+                                    <option className="text-purple-500" value="">Select a genre</option>
+                                    <option className="text-purple-500" value="Comedy">Comedy</option>
+                                    <option className="text-purple-500" value="Drama">Drama</option>
+                                    <option className="text-purple-500" value="Horror">Horror</option>
+                                    <option className="text-purple-500" value="Action">Action</option>
+                                    <option className="text-purple-500" value="Romance">Romance</option>
                                 </select>
                             </div>
                             <div>
                                 <label className="label">
                                     <span className="label-text text-white">Duration (in minutes)</span>
                                 </label>
-                                <input type="number" name="duration" placeholder="Enter duration in minutes" className="input input-bordered  text-white border-white w-full bg-white/10" />
+                                <input type="number" name="duration" placeholder="Enter duration in minutes" className="input input-bordered  text-purple-500  w-full " />
                             </div>
                         </div>
 
                         <div className="form-control grid md:grid-cols-2 items-center md:space-x-2">
                             <div>
-                                <label className=" text-white">Release Year</label>
-                                <select id="dayInput" name="Release" className="input input-bordered  text-white border-white w-full bg-white/10">
-                                    <option className="text-black" value="">Select release year</option>
-                                    <option className="text-black" value="2024">2024</option>
-                                    <option className="text-black" value="2023">2023</option>
-                                    <option className="text-black" value="2022">2022</option>
-                                    <option className="text-black" value="2021">2021</option>
+                                <label className="text-white ">Release Year</label>
+                                <select id="dayInput" name="Release" className="input input-bordered    w-full ">
+                                    <option className="text-purple-500" value="">Select release year</option>
+                                    <option className="text-purple-500" value="2024">2024</option>
+                                    <option className="text-purple-500" value="2023">2023</option>
+                                    <option className="text-purple-500" value="2022">2022</option>
+                                    <option className="text-purple-500" value="2021">2021</option>
                                 </select>
                             </div>
                             <div style={{ maxWidth: "400px", margin: "0 auto", textAlign: "center" }}>
@@ -145,12 +145,12 @@ const AddMovie = () => {
                             <label className="label">
                                 <span className="label-text text-white">Summary</span>
                             </label>
-                            <textarea name="Summary" id="" rows="5" className=" text-white border-white w-full bg-white/10 p-3 rounded-xl outline-none" placeholder="Enter a short summary of the movie"></textarea>
-                            {/* <textarea name="" id="" rows="10"></textarea> */}
+                            <textarea name="Summary" id="" rows="5" className=" border-2  w-full  p-3 rounded-xl" placeholder="Enter a short summary of the movie"></textarea>
+                         
                         </div>
 
                         <div className="form-control mt-6">
-                            <button className="btn bg-transparent border text-white hover:bg-white/30">Add Movie</button>
+                            <button className="btn btn-outline bg-white text-purple-500 hover:bg-rose-400/30">Add Movie</button>
                         </div>
                     </form>
                 </div>

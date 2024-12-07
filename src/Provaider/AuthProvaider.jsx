@@ -46,6 +46,9 @@ const AuthProvaider = ({ children }) => {
         }
     }
 
+   
+
+
     const authInfo = {
         handaleGoogle,
         handaleGithub,
@@ -55,7 +58,7 @@ const AuthProvaider = ({ children }) => {
         user,
         looder,
         manageUsr,
-        setUser
+        setUser,
 
 
 

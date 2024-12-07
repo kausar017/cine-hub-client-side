@@ -36,7 +36,7 @@ const Details = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/movies/${_id}`, {
+                fetch(`https://cenehub.vercel.app/movies/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -64,7 +64,7 @@ const Details = () => {
             ...dataDetailes,
             useremail: email,
         }
-        fetch(`http://localhost:5000/favarite`, {
+        fetch(`https://cenehub.vercel.app/favarite`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -90,7 +90,7 @@ const Details = () => {
 
 
     return (
-        <div className='text-white pt-[150px] p-3 container mx-auto'>
+        <div className=' pt-[150px] p-3 container mx-auto'>
             <div>
                 <div
                     className="hero min-h-[600px]"
@@ -100,7 +100,7 @@ const Details = () => {
                     }}>
                     <div className="hero-overlay bg-opacity-50"></div>
                     <div className="hero-content text-neutral-content">
-                        <div className="">
+                        <div className="text-white">
                             <h1 className="mb-5 text-4xl font-bold">Movie: {title}</h1>
                             <div className="mb-5">
                                 <p className='text-lg'><span className='font-bold'>Genre: </span> {genre}</p>

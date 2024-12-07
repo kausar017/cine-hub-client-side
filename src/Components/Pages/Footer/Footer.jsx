@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div>
            <div>
-            <footer className="footer footer-center border-2 backdrop-blur-sm  text-white rounded py-3">
+            <footer className="footer footer-center  backdrop-blur-sm bg-purple-600/50  rounded py-3">
                 <aside>
                     <img className='w-[100px]' src={logo} alt="" />
                     <p>
