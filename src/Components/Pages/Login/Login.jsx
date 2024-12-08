@@ -9,14 +9,17 @@ import { useForm } from "react-hook-form";
 
 const Login = () => {
 
+    const naviGate = useNavigate()
+    const location = useLocation()
+    const { user, handalLogin, handaleGoogle, handaleGithub } = useContext(AuthContext)
+    const pathname = location.state || '/';
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         handalLogin(data.email, data.password)
-            // .then(res => res.json())
             .then(data => {
                 // console.log(data);
-                navigate(location?.state ? location.state : '/');
+                naviGate(pathname);
                 Swal.fire("Successfully logged in!");
             })
             .catch((error) => {
@@ -28,36 +31,23 @@ const Login = () => {
         document.title = "CENE-HUB | LOGIN"
     }, [])
 
-    const location = useLocation();
-    const navigate = useNavigate()
-
-    const { user, handalLogin, handaleGoogle, handaleGithub } = useContext(AuthContext)
-
     const googleLogin = () => {
         handaleGoogle()
-        return navigate(location.state ? location.state : '/')
+            .then(res => {
+                naviGate(pathname)
 
+            })
     }
+
     const githubLogin = () => {
         handaleGithub()
-        return navigate(location.state ? location.state : '/')
+            .then(res => {
+                naviGate(pathname)
+
+            })
     }
 
-    // const handalSubmit = e => {
-    //     // console.log(e);
-
-    //     e.preventDefault();
-    //     const form = e.target;
-    //     const email = form.email.value;
-    //     const password = form.password.value;
-    //     // console.log(email, password);
-
-
-
-
-    // }
-
-
+   
     return (
         <div>
             <div className="flex flex-col justify-center items-center pt-36 min-h-[600px]">

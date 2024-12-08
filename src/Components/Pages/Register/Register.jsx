@@ -5,13 +5,16 @@ import Swal from 'sweetalert2';
 
 const Register = () => {
 
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const pathname =location.state || '/'
+
     useEffect(() => {
         document.title = "CENE-HUB | REGISTER"
     }, [])
 
     const { handaleRegister, manageUsr, setUser } = useContext(AuthContext)
-    const location = useLocation();
-    const navigate = useNavigate();
 
     // Password validation function
     const validatePassword = (password) => {
@@ -61,7 +64,7 @@ const Register = () => {
                 const user = res.user
                 setUser(user);
                 Swal.fire("Registration successful!");
-                navigate(location?.state ? location.state : '/');
+                navigate(pathname);
             })
             .catch(error => {
                 Swal.fire("Registration not successful! email allrady registared", error);

@@ -16,7 +16,7 @@ const Details = () => {
     }, [])
 
     const dataDetailes = useLoaderData()
-    console.log(dataDetailes);
+    // console.log(dataDetailes);
     const navigate = useNavigate()
     const [refress, setRefress] = useState()
 
@@ -87,7 +87,7 @@ const Details = () => {
             })
             .catch(error => {
                 // console.log(error);
-                Swal.fire("Error!", "Could not add movie to favorites", "error");
+                Swal.fire("Movie all Rady Added!", "Could not add movie to favorites", "error");
             });
     };
 
