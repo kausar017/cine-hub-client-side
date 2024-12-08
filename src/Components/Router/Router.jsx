@@ -28,14 +28,14 @@ const Router = createBrowserRouter([
       },
       {
         path: '/allmovie',
-        element: <PrivetRout>
-          <AllMovies></AllMovies>
-        </PrivetRout>,
+        element:
+          <AllMovies></AllMovies>,
+
         loader: () => fetch(`https://cenehub.vercel.app/movies`)
       },
       {
         path: '/detals/:id',
-        element: <Details></Details>,
+        element: <PrivetRout><Details></Details></PrivetRout>,
         loader: ({ params }) => fetch(`https://cenehub.vercel.app/movies/${params.id}`)
       },
       {

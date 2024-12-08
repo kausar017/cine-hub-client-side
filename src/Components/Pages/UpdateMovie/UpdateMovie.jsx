@@ -2,6 +2,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import bg from '../../../assets/polygon-scatter-haikei.png'
 import { useEffect } from "react";
 
 const UpdateMovie = () => {
@@ -88,7 +89,13 @@ const UpdateMovie = () => {
         <div>
             <div>
                 <div className="flex flex-col justify-center pt-32 items-center min-h-screen lg:w-8/12 mx-auto p-3">
-                    <div className="card border-2 rounded-xl bg-purple-400 w-full py-5 backdrop-blur-md">
+                    <div className="card border-2 rounded-xl bg-purple-400 w-full py-5 backdrop-blur-md" style={{
+                        backgroundImage: `url(${bg})`,
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+
+                    }}>
                         <form onSubmit={handalUpdate} className="card-body">
                             <h1 className="text-center text-4xl font-bold text-purple-900">Update Movie </h1>
                             <div className="border-t-2 w-[20%] mx-auto"></div>
@@ -97,20 +104,20 @@ const UpdateMovie = () => {
                                     <label className="label">
                                         <span className="label-text text-white">Movie Poster (URL)</span>
                                     </label>
-                                    <input type="url" name="url" defaultValue={url} className="input input-bordered text-white w-full " />
+                                    <input type="url" name="url" defaultValue={url} className="input input-bordered border-white text-white placeholder:text-white bg-transparent w-full " />
                                 </div>
                                 <div>
                                     <label className="label">
                                         <span className="label-text text-white">Movie Title</span>
                                     </label>
-                                    <input type="text" name="title" defaultValue={title} className="input input-bordered text-white w-full " />
+                                    <input type="text" name="title" defaultValue={title} className="input input-bordered border-white text-white placeholder:text-white bg-transparent w-full " />
                                 </div>
                             </div>
 
                             <div className="form-control grid md:grid-cols-2 items-center md:space-x-2">
                                 <div>
                                     <label className=" text-white">Genre</label>
-                                    <select id="dayInput" defaultValue={genre} name="genre" className="input input-bordered text-white w-full ">
+                                    <select id="dayInput" defaultValue={genre} name="genre" className="input input-bordered border-white text-white placeholder:text-white bg-transparent w-full ">
                                         <option className="text-purple-500" value="">Select a genre</option>
                                         <option className="text-purple-500" value="Comedy">Comedy</option>
                                         <option className="text-purple-500" value="Drama">Drama</option>
@@ -123,14 +130,14 @@ const UpdateMovie = () => {
                                     <label className="label">
                                         <span className="label-text text-white">Duration (in minutes)</span>
                                     </label>
-                                    <input type="number" name="duration" defaultValue={duration} className="input input-bordered text-white w-full " />
+                                    <input type="number" name="duration" defaultValue={duration} className="input input-bordered border-white text-white placeholder:text-white bg-transparent w-full " />
                                 </div>
                             </div>
 
                             <div className="form-control grid md:grid-cols-2 items-center md:space-x-2">
                                 <div>
                                     <label className=" text-white">Release Year</label>
-                                    <select id="dayInput" defaultValue={Release} name="Release" className="input input-bordered text-white w-full ">
+                                    <select id="dayInput" defaultValue={Release} name="Release" className="input input-bordered border-white text-white placeholder:text-white bg-transparent w-full ">
                                         <option className="text-purple-500" value="">Select release year</option>
                                         <option className="text-purple-500" value="2024">2024</option>
                                         <option className="text-purple-500" value="2023">2023</option>
@@ -157,7 +164,7 @@ const UpdateMovie = () => {
                                 <label className="label">
                                     <span className="label-text text-white">Summary</span>
                                 </label>
-                                <textarea name="Summary" id="" rows="5" className="   w-full border-2 p-3 rounded-xl outline-none" defaultValue={Summary}></textarea>
+                                <textarea name="Summary" id="" rows="5" className="   w-full border-2 p-3 rounded-xl border-white text-white placeholder:text-white bg-transparent outline-none" defaultValue={Summary}></textarea>
                                 {/* <textarea name="" id="" rows="10"></textarea> */}
                             </div>
 

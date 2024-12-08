@@ -34,13 +34,13 @@ const Login = () => {
     const { user, handalLogin, handaleGoogle, handaleGithub } = useContext(AuthContext)
 
     const googleLogin = () => {
-        navigate(location.state ? location.state : '/')
         handaleGoogle()
+        return navigate(location.state ? location.state : '/')
 
     }
     const githubLogin = () => {
-        navigate(location.state ? location.state : '/')
         handaleGithub()
+        return navigate(location.state ? location.state : '/')
     }
 
     // const handalSubmit = e => {
