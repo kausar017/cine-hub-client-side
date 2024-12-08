@@ -16,7 +16,7 @@ const Details = () => {
     }, [])
 
     const dataDetailes = useLoaderData()
-    // console.log(dataDetailes);
+    console.log(dataDetailes);
     const navigate = useNavigate()
     const [refress, setRefress] = useState()
 

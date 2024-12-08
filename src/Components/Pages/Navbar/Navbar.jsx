@@ -3,6 +3,7 @@ import './Navbar.css';
 import logo from '../../../assets/cina hub logo.png'
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Provaider/AuthProvaider";
+import bg from '../../../assets/polygon-scatter-haikei.png'
 const Navbar = () => {
 
     const { user, handalLogout } = useContext(AuthContext)

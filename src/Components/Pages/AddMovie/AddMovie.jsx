@@ -3,6 +3,7 @@ import ReactStars from "react-rating-stars-component";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../../../Provaider/AuthProvaider";
 import { useEffect } from "react";
+import bg from '../../../assets/polygon-scatter-haikei.png'
 const AddMovie = () => {
 
     useEffect(() => {
@@ -83,7 +84,12 @@ const AddMovie = () => {
     return (
         <div>
             <div className="flex flex-col justify-center pt-32 items-center  md:w-8/12 mx-auto p-3">
-                <div className="card border-2 rounded-xl  w-full py-10 bg-purple-400">
+                <div className="card border-2 rounded-xl  w-full py-10" style={{
+                    backgroundImage: `url(${bg})`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                }}>
                     <form onSubmit={handalSubmit} className="card-body">
                         <h1 className="text-center text-4xl font-bold text-purple-900">Add Movie </h1>
                         <div className="border-t-2 w-[20%] mx-auto"></div>
@@ -92,20 +98,20 @@ const AddMovie = () => {
                                 <label className="label">
                                     <span className="label-text text-white">Movie Poster (URL)</span>
                                 </label>
-                                <input type="url" name="url" placeholder="Movie Poster" className="input input-bordered text-purple-500  w-full " />
+                                <input type="url" name="url" placeholder="Movie Poster" className="input input-bordered border-white text-white placeholder:text-white bg-transparent  w-full " />
                             </div>
                             <div>
                                 <label className="label">
                                     <span className="label-text text-white">Movie Title</span>
                                 </label>
-                                <input type="text" name="title" placeholder="Enter movie title" className="input input-bordered  text-white  w-full " />
+                                <input type="text" name="title" placeholder="Enter movie title" className="input input-bordered w-full border-white text-white placeholder:text-white bg-transparent" />
                             </div>
                         </div>
 
                         <div className="form-control grid md:grid-cols-2 items-center md:space-x-2">
                             <div>
                                 <label className=" text-white">Genre</label>
-                                <select id="dayInput" name="genre" className="input input-bordered    w-full ">
+                                <select id="dayInput" name="genre" className="input input-bordered  border-white text-white placeholder:text-white bg-transparent  w-full ">
                                     <option className="text-purple-500" value="">Select a genre</option>
                                     <option className="text-purple-500" value="Comedy">Comedy</option>
                                     <option className="text-purple-500" value="Drama">Drama</option>
@@ -118,14 +124,14 @@ const AddMovie = () => {
                                 <label className="label">
                                     <span className="label-text text-white">Duration (in minutes)</span>
                                 </label>
-                                <input type="number" name="duration" placeholder="Enter duration in minutes" className="input input-bordered  text-purple-500  w-full " />
+                                <input type="number" name="duration" placeholder="Enter duration in minutes" className="input input-bordered  border-white text-white placeholder:text-white bg-transparent  w-full " />
                             </div>
                         </div>
 
                         <div className="form-control grid md:grid-cols-2 items-center md:space-x-2">
                             <div>
                                 <label className="text-white ">Release Year</label>
-                                <select id="dayInput" name="Release" className="input input-bordered    w-full ">
+                                <select id="dayInput" name="Release" className="input input-bordered  border-white text-white placeholder:text-white bg-transparent  w-full ">
                                     <option className="text-purple-500" value="">Select release year</option>
                                     <option className="text-purple-500" value="2024">2024</option>
                                     <option className="text-purple-500" value="2023">2023</option>
@@ -151,8 +157,8 @@ const AddMovie = () => {
                             <label className="label">
                                 <span className="label-text text-white">Summary</span>
                             </label>
-                            <textarea name="Summary" id="" rows="5" className=" border-2  w-full  p-3 rounded-xl" placeholder="Enter a short summary of the movie"></textarea>
-                         
+                            <textarea name="Summary" id="" rows="5" className=" border-2  w-full border-white text-white placeholder:text-white bg-transparent  p-3 rounded-xl" placeholder="Enter a short summary of the movie"></textarea>
+
                         </div>
 
                         <div className="form-control mt-6">

@@ -5,6 +5,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
+
 import image1 from '../../../assets/carasol-1.jpg'
 import image2 from '../../../assets/carasol-2.jpg'
 import image3 from '../../../assets/carasol-3.webp'
@@ -24,6 +25,7 @@ const Bannar = () => {
     return (
         <>
             <div className='pt-28' >
+
                 <Swiper
                     spaceBetween={30}
                     centeredSlides={true}
@@ -55,7 +57,7 @@ const Bannar = () => {
             </div>
         </>
 
-    ); object - cover
+    ); 
 };
 
 export default Bannar;

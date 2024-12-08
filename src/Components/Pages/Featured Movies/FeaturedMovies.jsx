@@ -1,8 +1,10 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import { SiDatabricks } from "react-icons/si";
+
+
 
 const FeaturedMovies = () => {
     const [movie, setMovie] = useState()
@@ -19,7 +21,7 @@ const FeaturedMovies = () => {
             .catch(error => console.error(error));
     }, [])
     if (loding) {
-        return <p className=" text-center text-xl"><Loader></Loader> </p>;
+        return <Loader></Loader>
     };
 
     if (!movie || movie.length === 0) {
@@ -42,6 +44,7 @@ const FeaturedMovies = () => {
 
     return (
         <div>
+            
             <div>
                 <h1 className="text-center  text-5xl font-bold text-purple-800 py-5">Featured Movies</h1>
                 <div className="border-t-2 w-[20%] mx-auto"></div>
