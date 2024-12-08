@@ -14,6 +14,9 @@ const Favarite = () => {
 
     const { user } = useContext(AuthContext)
     const favariteData = useLoaderData();
+
+    const [allFavarite, setAllFavarite] = useState(favariteData)
+
     const [repress, setRepress] = useState(favariteData);
 
     const filtaredData = repress.filter(data => data.email == user.email)
@@ -33,7 +36,7 @@ const Favarite = () => {
                 ) : (
                     <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-3 p-4">
                         {
-                            filtaredData?.map((favarite, index) => <FavariteCard key={favarite._id} favarite={favarite} repress={repress} setRepress={setRepress}></FavariteCard>)
+                            allFavarite?.map((favarite, index) => <FavariteCard key={favarite._id} favarite={favarite} repress={repress} setAllFavarite={setAllFavarite} setRepress={setRepress}></FavariteCard>)
                         }
                     </div>
                 )}

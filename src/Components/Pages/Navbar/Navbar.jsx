@@ -25,6 +25,9 @@ const Navbar = () => {
         }
     }
 
+    const logOUt = () => {
+        handalLogout()
+    }
 
     const link = <>
         <div className="space-x-3 flex max-sm:flex-col bg-transparent">
@@ -32,7 +35,7 @@ const Navbar = () => {
             <NavLink to={'/allmovie'} className="btn btn-sm hover:bg-purple-500 btn-outline text-white "><button>All Movies</button></NavLink>
             <NavLink to={'/addmovie'} className="btn btn-sm hover:bg-purple-500 btn-outline text-white "><button>Add Movie</button></NavLink>
             <NavLink to={'/favarite'} className="btn btn-sm hover:bg-purple-500 btn-outline text-white "><button>My Favorites</button></NavLink>
-           
+
         </div>
     </>
     return (
@@ -103,7 +106,7 @@ const Navbar = () => {
                     }
 
                     {
-                        user ? <Link to={'/'} onClick={handalLogout} className="btn btn-sm btn-outline  ">Logout</Link> : <Link to={'/login'} className="btn btn-sm bg-transparent ">Login</Link>
+                        user ? <Link to={'/'} onClick={logOUt} className="btn btn-sm btn-outline  ">Logout</Link> : <Link to={'/login'} className="btn btn-sm bg-transparent ">Login</Link>
                     }
 
 

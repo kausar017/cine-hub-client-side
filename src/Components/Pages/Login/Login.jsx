@@ -12,7 +12,7 @@ const Login = () => {
     const naviGate = useNavigate()
     const location = useLocation()
     const { user, handalLogin, handaleGoogle, handaleGithub } = useContext(AuthContext)
-    const pathname = location.state || '/';
+    const pathname = location.state ? location.state : '/';
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -47,7 +47,7 @@ const Login = () => {
             })
     }
 
-   
+
     return (
         <div>
             <div className="flex flex-col justify-center items-center pt-36 min-h-[600px]">
@@ -73,7 +73,7 @@ const Login = () => {
                         </div>
                         <div className="flex justify-center gap-3">
                             <button onClick={() => googleLogin()} className="btn btn-outline btn-sm text-white hover:bg-purple-900/50 hover:text-white"><FcGoogle></FcGoogle>  Google Login</button>
-                            <button onClick={() => githubLogin()} className="btn btn-outline btn-sm text-white hover:bg-purple-900/50 hover:text-white"><FaGithub color="white"></FaGithub> Github Login</button>
+                            <button onClick={() => githubLogin()} className="btn btn-outline btn-sm text-white hover:bg-purple-900/50 hover:text-white btn-disabled"><FaGithub color="white"></FaGithub> Github Login</button>
                         </div>
                         <div className="ml-4 my-4 text-white">
                             New to this Website? please<Link className="ml-2 font-semibold underline hover:text-red-500" to={'/register'}>Reagister</Link>

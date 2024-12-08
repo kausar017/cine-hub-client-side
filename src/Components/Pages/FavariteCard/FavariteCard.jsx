@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../../../Provaider/AuthProvaider';
 
 
-const FavariteCard = ({ favarite, index, repress, setRepress }) => {
+const FavariteCard = ({ favarite, index, repress, setRepress, setAllFavarite }) => {
     // console.log(favarite);
 
     const { _id, url, title, rating, day, genre, duration, Release, Summary} = favarite;
@@ -30,7 +30,7 @@ const FavariteCard = ({ favarite, index, repress, setRepress }) => {
                 fetch(`https://cenehub.vercel.app/favarite/${_id}`, {
                     method: 'DELETE',
                 })
-                    .then(res => res.json())
+                    // .then(res => res.json())
                     .then(data => {
                         // console.log(data);
                         Swal.fire({
@@ -46,7 +46,7 @@ const FavariteCard = ({ favarite, index, repress, setRepress }) => {
                 const repressData = repress.filter(repres => repres._id !== _id);
                 // console.log(repressData);
 
-                setRepress(repressData)
+                setAllFavarite(repressData)
             }
 
         });

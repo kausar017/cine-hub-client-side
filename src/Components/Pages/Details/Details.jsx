@@ -22,7 +22,7 @@ const Details = () => {
 
     const { user } = useContext(AuthContext)
     const email = user?.email
-    // console.log(email);
+    console.log(email);
 
     const { _id, url, title, genre, duration, Release, rating, Summary } = dataDetailes;
     // console.log(_id);
