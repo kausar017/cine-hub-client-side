@@ -1,9 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Provaider/AuthProvaider';
 import Swal from 'sweetalert2';
 
 const Register = () => {
+
+    useEffect(() => {
+        document.title = "CENE-HUB | REGISTER"
+    }, [])
+
     const { handaleRegister, manageUsr, setUser } = useContext(AuthContext)
     const location = useLocation();
     const navigate = useNavigate();
@@ -48,7 +53,7 @@ const Register = () => {
         if (validatePassword(password)) {
             return
         }
-        console.log(name, email, photo, password);
+        // console.log(name, email, photo, password);
 
         handaleRegister(email, password)
             .then(res => {

@@ -12,8 +12,15 @@ import image4 from '../../../assets/carasol-4.jpg'
 import FeaturedMovies from '../Featured Movies/FeaturedMovies';
 import AboutePage from '../Aboute Page/AboutePage';
 import PopularActors from '../PopularActors/PopularActors';
+import { useEffect } from 'react';
 
 const Bannar = () => {
+
+    useEffect(() => {
+        document.title = "Home | CENE HUB"
+    }, [])
+
+
     return (
         <>
             <div className='pt-28' >

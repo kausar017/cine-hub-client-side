@@ -4,8 +4,13 @@ import { FcGoogle } from "react-icons/fc";
 import { data, Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Provaider/AuthProvaider";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
 
 const Login = () => {
+
+    useEffect(() => {
+        document.title = "CENE-HUB | LOGIN"
+    }, [])
 
     const location = useLocation();
     const navigate = useNavigate()
@@ -23,18 +28,18 @@ const Login = () => {
     }
 
     const handalSubmit = e => {
-        console.log(e);
+        // console.log(e);
 
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
 
         handalLogin(email, password)
             // .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 navigate(location?.state ? location.state : '/');
                 Swal.fire("Successfully logged in!");
             })
@@ -65,7 +70,7 @@ const Login = () => {
                                 <span className="label-text text-white">Password</span>
                             </label>
                             <input type="password" name="password" placeholder="password" className="input input-bordered text-purple-600" required />
-                            
+
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-outline bg-white text-purple-500 hover:bg-purple-500 hover:text-white">Login</button>

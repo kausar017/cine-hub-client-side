@@ -6,18 +6,18 @@ const PopularActors = () => {
     const { looder } = useContext(AuthContext)
 
     const [actor, setactor] = useState([])
-    console.log(actor);
+    // console.log(actor);
    
     useEffect(() => {
         fetch("./PopularActors.json")
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setactor(data)
                 looder()
             })
             .catch(error => {
-                console.log(error);
+                // console.log(error);
             })
     }, [])
 

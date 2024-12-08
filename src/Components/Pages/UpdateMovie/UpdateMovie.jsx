@@ -2,15 +2,19 @@ import { useLoaderData, useParams } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
 
 const UpdateMovie = () => {
 
+    useEffect(() => {
+        document.title = "CENE-HUB | UPDATE MOVIE"
+    }, [])
 
     const { id } = useParams()
     // console.log(id);
 
     const updateData = useLoaderData()
-    console.log(updateData);
+    // console.log(updateData);
     const { _id, url, title, genre, duration, Release, rating: ret, Summary } = updateData
 
 
@@ -58,7 +62,7 @@ const UpdateMovie = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
 
                 if (data.modifiedCount > 0) {
                     Swal.fire({
@@ -70,7 +74,7 @@ const UpdateMovie = () => {
                 }
             })
             .catch(error => {
-                console.log(error);
+                // console.log(error);
 
             })
     }

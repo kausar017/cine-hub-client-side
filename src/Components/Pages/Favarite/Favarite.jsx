@@ -3,8 +3,15 @@ import FavariteCard from "../FavariteCard/FavariteCard";
 import { SiDatabricks } from "react-icons/si";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../Provaider/AuthProvaider";
+import { useEffect } from "react";
 
 const Favarite = () => {
+
+    useEffect(() => {
+        document.title = "CENE-HUB | ALL MOVIE"
+    }, [])
+
+
     const { user } = useContext(AuthContext)
     const favariteData = useLoaderData();
     const [repress, setRepress] = useState(favariteData);

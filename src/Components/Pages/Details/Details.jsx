@@ -7,8 +7,13 @@ import Swal from 'sweetalert2';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../../Provaider/AuthProvaider';
 import { RxUpdate } from 'react-icons/rx';
+import { useEffect } from 'react';
 
 const Details = () => {
+
+    useEffect(() => {
+        document.title = "DITALS"
+    }, [])
 
     const dataDetailes = useLoaderData()
     // console.log(dataDetailes);
@@ -17,7 +22,7 @@ const Details = () => {
 
     const { user } = useContext(AuthContext)
     const email = user?.email
-    console.log(email);
+    // console.log(email);
 
     const { _id, url, title, genre, duration, Release, rating, Summary } = dataDetailes;
     // console.log(_id);
@@ -25,7 +30,7 @@ const Details = () => {
 
 
     const handalDelete = (_id) => {
-        console.log('handal delet', _id);
+        // console.log('handal delet', _id);
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -42,7 +47,7 @@ const Details = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         Swal.fire({
                             title: "Deleted!",
                             text: "Your file has been deleted.",
@@ -51,7 +56,7 @@ const Details = () => {
                         navigate("/allmovie")
                     })
                     .catch(error => {
-                        console.log(error);
+                        // console.log(error);
                     })
                 const refressData = refress.filter(refres => refres._id !== _id);
                 setRefress(refressData);
@@ -61,7 +66,7 @@ const Details = () => {
     }
 
     const handaleFaborite = () => {
-       
+
         fetch(`https://cenehub.vercel.app/favarite`, {
             method: 'POST',
             headers: {
@@ -71,7 +76,7 @@ const Details = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('Favorite Added:', data);
+                // console.log('Favorite Added:', data);
                 if (data.insertedId) {
                     Swal.fire("Success!", "Movie added to favorites", "success");
                     navigate("/favarite");
@@ -81,7 +86,7 @@ const Details = () => {
                 }
             })
             .catch(error => {
-                console.log(error);
+                // console.log(error);
                 Swal.fire("Error!", "Could not add movie to favorites", "error");
             });
     };

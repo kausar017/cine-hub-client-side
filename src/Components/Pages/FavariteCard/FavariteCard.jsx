@@ -15,7 +15,7 @@ const FavariteCard = ({ favarite, index, repress, setRepress }) => {
 
 
     const handalFavariteDelete = _id => {
-        console.log('favarite movie delete', _id);
+        // console.log('favarite movie delete', _id);
 
         Swal.fire({
             title: "Are you sure?",
@@ -32,7 +32,7 @@ const FavariteCard = ({ favarite, index, repress, setRepress }) => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         Swal.fire({
                             title: "Deleted!",
                             text: "Your Movie has been deleted.",
@@ -40,11 +40,11 @@ const FavariteCard = ({ favarite, index, repress, setRepress }) => {
                         });
                     })
                     .catch(error => {
-                        console.log(error);
+                        // console.log(error);
 
                     })
                 const repressData = repress.filter(repres => repres._id !== _id);
-                console.log(repressData);
+                // console.log(repressData);
 
                 setRepress(repressData)
             }

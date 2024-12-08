@@ -2,7 +2,13 @@ import { useContext, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../../../Provaider/AuthProvaider";
+import { useEffect } from "react";
 const AddMovie = () => {
+
+    useEffect(() => {
+        document.title = "CENE-HUB | ADD MOVIE"
+    }, [])
+
 
     const { user } = useContext(AuthContext)
     const email = (user.email)
@@ -18,7 +24,7 @@ const AddMovie = () => {
         const Summary = form.Summary.value;
 
         const movieData = { url, title, genre, duration, Release, rating, Summary };
-        console.log(movieData);
+        // console.log(movieData);
 
         // validation 
         if (!url || !url.startsWith("http")) {
@@ -56,14 +62,14 @@ const AddMovie = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 if (data.insertedId) {
                     Swal.fire("Movie added successfully!")
                 }
                 form.reset()
             })
             .catch((error) => {
-                console.log(error);
+                // console.log(error);
                 Swal.fire("Failed to add movie. Please try again.");
             });
     };

@@ -5,8 +5,12 @@ import { useEffect, useState } from "react";
 
 const AllMovies = () => {
 
+    useEffect(() => {
+        document.title = "CENE-HUB | ALL MOVIE"
+    }, [])
+
     const [search, setSearch] = useState("")
-    console.log(search);
+    // console.log(search);
 
     const movieAllData = useLoaderData()
 
