@@ -59,17 +59,17 @@ const Login = () => {
                                 <span className="label-text text-white">Email</span>
                             </label>
                             <input type="email" {...register("email", { required: true })} placeholder="email" className="input input-bordered text-purple-600" />
-                            {errors.email && <span>This field is required</span>}
+                            {errors.email && <span className="text-red-500">This field is required</span>}
                         </div>
                         <div className="form-control ">
                             <label className="label">
                                 <span className="label-text text-white">Password</span>
                             </label>
                             <input type="password" {...register("password", { required: true })} placeholder="password" className="input input-bordered text-purple-600" />
-                            {errors.email && <span>This field is required</span>}
+                            {errors.email && <span className="text-red-500">This field is required</span>}
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-outline bg-white text-purple-500 hover:bg-purple-500 hover:text-white">Login</button>
+                            <button className="btn btn-outline  text-white hover:bg-white/20 hover:text-white">Login</button>
                         </div>
                         <div className="flex justify-center gap-3">
                             <button onClick={() => googleLogin()} className="btn btn-outline btn-sm text-white hover:bg-purple-900/50 hover:text-white"><FcGoogle></FcGoogle>  Google Login</button>

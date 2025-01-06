@@ -3,7 +3,8 @@ import './Navbar.css';
 import logo from '../../../assets/cina hub logo.png'
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Provaider/AuthProvaider";
-import bg from '../../../assets/polygon-scatter-haikei.png'
+// import { Link, animateScroll as scroll } from "react-scroll";
+
 const Navbar = () => {
 
     const { user, handalLogout } = useContext(AuthContext)
@@ -28,11 +29,18 @@ const Navbar = () => {
     const logOUt = () => {
         handalLogout()
     }
+    const scrollToSection = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
 
     const link = <>
         <div className="space-x-3 flex max-sm:flex-col bg-transparent">
-            <NavLink to={'/'} className="btn btn-sm  btn-outline text-white hover:bg-purple-500"><button>Home</button></NavLink>
+            <NavLink onClick={() => scrollToSection('bannar')} to={'/'} className="btn btn-sm  btn-outline text-white hover:bg-purple-500"><button>Home</button></NavLink>
             <NavLink to={'/allmovie'} className="btn btn-sm hover:bg-purple-500 btn-outline text-white "><button>All Movies</button></NavLink>
+
             {
                 !user ?
                     ""
@@ -46,7 +54,8 @@ const Navbar = () => {
                     :
                     <NavLink to={'/favarite'} className="btn btn-sm hover:bg-purple-500 btn-outline text-white "><button>My Favorites</button></NavLink>
             }
-
+            <botton onClick={() => scrollToSection('about')} className="btn btn-sm hover:bg-purple-500 btn-outline text-white ">About Me</botton>
+            <button onClick={() => scrollToSection('section1')} className="btn btn-sm hover:bg-purple-500 btn-outline text-white ">Contact </button>
 
 
         </div>
@@ -86,7 +95,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end space-x-2">
-                   
+
                     {
                         user ? <div className="flex flex-col justify-center items-center">
                             <img referrerPolicy="no-referrer" title={user.displayName} className="w-12 rounded-full" src={user?.photoURL} alt="" />

@@ -75,8 +75,8 @@ const Register = () => {
 
     return (
         <div className="flex flex-col justify-center pt-32 items-center">
-            <div className="card border-2 border-purple-500 backdrop-blur-md w-full max-w-lg bg-purple-400 shrink-0" data-aos="zoom-in-up">
-                <h1 className="text-5xl font-bold text-center mt-5 text-purple-900">Register now!</h1>
+            <div className="card border-2 border-purple-500 backdrop-blur-md w-full max-w-lg bg- shrink-0" data-aos="zoom-in-up">
+                <h1 className="text-5xl font-bold text-center mt-5 text-white">Register now!</h1>
                 <form onSubmit={handalSubmit} className="card-body">
                     <div className="form-control">
                         <label className="label">

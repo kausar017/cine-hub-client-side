@@ -25,7 +25,7 @@ const PopularActors = () => {
     return (
         <div className="py-[10px] w-9/12 mx-auto ">
             <div className="py-8">
-                <h1 className="text-purple-500 text-center text-5xl font-bold">Featured Actors</h1>
+                <h1 className="text-white text-center text-5xl font-bold">Featured Actors</h1>
                 <div className="border-t-2 w-[30%] mx-auto"></div>
 
             </div>
@@ -40,7 +40,7 @@ const PopularActors = () => {
                                         src={pepole.image}
                                         alt="Shoes" />
                                 </figure>
-                                <div className="card-body text-purple-400">
+                                <div className="card-body text-white">
                                     <h2 className="card-title">{pepole.name}</h2>
                                     <p className="font-bold">Famous Movies:</p>
                                     <ul>
@@ -50,7 +50,7 @@ const PopularActors = () => {
                                     </ul>
                                     <p>Age: {pepole.age}</p>
                                     <div className="card-actions justify-end">
-                                        <button className="btn btn-sm btn-outline text-purple-500">Actor Detals</button>
+                                        <button className="btn btn-sm btn-outline text-white">Actor Detals</button>
                                     </div>
                                 </div>
                             </div>

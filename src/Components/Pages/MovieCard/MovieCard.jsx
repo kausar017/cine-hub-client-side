@@ -15,7 +15,7 @@ const MovieCard = ({ moviedata }) => {
                         src={url}
                         alt={url} />
                 </figure>
-                <div className="card-body text-purple-500">
+                <div className="card-body text-white">
                     <h2 className="card-title">{title}</h2>
                     <p>Genre: {genre}</p>
                     <p>Duration: {duration} Minit</p>
@@ -38,7 +38,7 @@ const MovieCard = ({ moviedata }) => {
                     </div>
                     <p title={Summary}>Summary: {Summary.slice(0, 25)}</p>
                     <div className="card-actions justify-end">
-                        <Link to={`/detals/${_id}`} className="btn btn-sm btn-outline  hover:bg-[#F739B6]">Details</Link>
+                        <Link to={`/detals/${_id}`} className="btn btn-sm btn-outline text-white hover:bg-[#F739B6]">Details</Link>
                     </div>
                 </div>
             </div>

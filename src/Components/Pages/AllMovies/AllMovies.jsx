@@ -17,12 +17,12 @@ const AllMovies = () => {
     return (
         <div className="pt-[150px] container mx-auto">
             <div>
-                <h1 className="text-center text-5xl font-bold text-purple-500">All Movie</h1>
+                <h1 className="text-center text-5xl font-bold text-white">All Movie</h1>
                 <div className="border-t-2 w-[20%] mx-auto"></div>
             </div>
 
             <div className="flex flex-col py-5 items-center">
-                <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder="Type here" className="input input-bordered  bg-white/30 w-full  max-w-xs" />
+                <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder="Type here" className="input input-bordered  bg-white w-full  max-w-xs" />
             </div>
 
             <div>

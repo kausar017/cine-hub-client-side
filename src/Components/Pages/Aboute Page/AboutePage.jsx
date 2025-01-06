@@ -1,9 +1,11 @@
 
 const AboutePage = () => {
     return (
-        <div className="pt-[10px]">
+        <div id="about" className="pt-[10px]">
             <section className="p-6 container mx-auto min-h-[800px]">
                 <h2 className="text-5xl font-bold mb-4 text-center text-white">About Us</h2>
+                <div className="border-b-2 w-full max-w-60 mx-auto"></div>
+                <br />
                 <p className="text-lg mb-6 text-center max-w-[800px] mx-auto text-white">
                     Welcome to Cine Hub, your go-to platform for discovering, rating, and managing your favorite movies. Our goal is to make movie selection fun and hassle-free.
                 </p>

@@ -14,6 +14,7 @@ import FeaturedMovies from '../Featured Movies/FeaturedMovies';
 import AboutePage from '../Aboute Page/AboutePage';
 import PopularActors from '../PopularActors/PopularActors';
 import { useEffect } from 'react';
+import Contact from '../Contact/Contact';
 
 const Bannar = () => {
 
@@ -24,7 +25,7 @@ const Bannar = () => {
 
     return (
         <>
-            <div className='' >
+            <div id='bannar' className='' >
 
                 <Swiper
                     spaceBetween={30}
@@ -54,6 +55,9 @@ const Bannar = () => {
             </div>
             <div>
                 <PopularActors></PopularActors>
+            </div>
+            <div id="section1" className='pt-10'>
+                <Contact></Contact>
             </div>
         </>
 

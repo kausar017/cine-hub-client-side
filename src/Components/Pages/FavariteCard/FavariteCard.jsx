@@ -10,7 +10,7 @@ import { AuthContext } from '../../../Provaider/AuthProvaider';
 const FavariteCard = ({ favarite, index, repress, setRepress, setAllFavarite }) => {
     // console.log(favarite);
 
-    const { _id, url, title, rating, day, genre, duration, Release, Summary} = favarite;
+    const { _id, url, title, rating, day, genre, duration, Release, Summary } = favarite;
     // console.log(_id);
 
 
@@ -55,14 +55,14 @@ const FavariteCard = ({ favarite, index, repress, setRepress, setAllFavarite }) 
     return (
         <div>
             <div className='container mx-auto'>
-                <div className="card card-compact border-2 backdrop-blur-md transition hover:scale-105 overflow-hidden  shadow-xl">
+                <div className="  border-2 backdrop-blur-md transition hover:scale-105 overflow-y- shadow-xl rounded-lg">
                     <figure>
                         <img
-                            className='p-2 rounded-lg w-full md:h-[300px] object-cover transition hover:scale-150 overflow-hidden'
+                            className='p-2 rounded-lg w-full h-72 object-cover'
                             src={url}
                             alt={url} />
                     </figure>
-                    <div className="card-body text-purple-400">
+                    <div className="card-body text-white">
                         <h2 className="card-title">Movie Name: {title}</h2>
                         <p>Genre: {genre}</p>
                         <p>Duration: {duration} Minit</p>
@@ -83,9 +83,9 @@ const FavariteCard = ({ favarite, index, repress, setRepress, setAllFavarite }) 
                                 <p>{rating}</p>
                             </div>
                         </div>
-                        <p>Summary: {Summary}</p>
+                        <p>Summary: {Summary.slice(0,25)}</p>
                         <div className="card-actions justify-end">
-                            <Link onClick={() => handalFavariteDelete(_id)} className="btn btn-sm btn-outline  hover:bg-[#F739B6]"><MdDeleteOutline size={20} color='red'></MdDeleteOutline> Delete</Link>
+                            <Link onClick={() => handalFavariteDelete(_id)} className="btn btn-sm btn-outline text-white hover:bg-[#F739B6]"><MdDeleteOutline size={20} color='red'></MdDeleteOutline> Delete</Link>
                         </div>
                     </div>
                 </div>

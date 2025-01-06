@@ -84,14 +84,9 @@ const AddMovie = () => {
     return (
         <div>
             <div className="flex flex-col justify-center pt-32 items-center  md:w-8/12 mx-auto p-3">
-                <div className="card border-2 rounded-xl  w-full py-10" style={{
-                    backgroundImage: `url(${bg})`,
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                }}>
+                <div className="card border-2 rounded-xl  w-full py-10 backdrop-blur-md" >
                     <form onSubmit={handalSubmit} className="card-body">
-                        <h1 className="text-center text-4xl font-bold text-purple-900">Add Movie </h1>
+                        <h1 className="text-center text-4xl font-bold text-white">Add Movie </h1>
                         <div className="border-t-2 w-[20%] mx-auto"></div>
                         <div className="form-control grid md:grid-cols-2 md:space-x-2">
                             <div>

@@ -24,7 +24,7 @@ const Favarite = () => {
     return (
         <div className=" pt-[120px] container mx-auto">
             <div>
-                <h1 className=" text-5xl font-bold text-center text-purple-500">Favarite Movie</h1>
+                <h1 className=" text-5xl font-bold text-center text-white">Favarite Movie</h1>
                 <div className="border-t-2 w-[25%] mx-auto"></div>
             </div>
             <div>
@@ -34,7 +34,7 @@ const Favarite = () => {
                         <SiDatabricks size={200} color="purple" />
                     </div>
                 ) : (
-                    <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-3 p-4">
+                    <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-3 p-4">
                         {
                             allFavarite?.map((favarite, index) => <FavariteCard key={favarite._id} favarite={favarite} repress={repress} setAllFavarite={setAllFavarite} setRepress={setRepress}></FavariteCard>)
                         }

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <div>
-            <div className="bg-white/20">
+            <div className="border backdrop-blur-sm mt-8">
                
                 <footer className="footer text-white flex items-center justify-around p-10">
                     <aside>
@@ -19,10 +19,10 @@ const Footer = () => {
                     </aside>
                     <nav>
                         <div className="flex max-sm:flex-col gap-3">
-                            <Link to={'/'} className="btn btn-sm  btn-ghost text-white hover:bg-purple-500"><button>Home</button></Link>
-                            <Link to={'/allmovie'} className="btn btn-sm hover:bg-purple-500 btn-ghost text-white "><button>All Movies</button></Link>
-                            <Link to={'/addmovie'} className="btn btn-sm hover:bg-purple-500 btn-ghost text-white "><button>Add Movie</button></Link>
-                            <Link to={'/favarite'} className="btn btn-sm hover:bg-purple-500 btn-ghost text-white "><button>My Favorites</button></Link>
+                            <Link to={'/'} className="btn btn-sm  btn-ghost text-white "><button>Home</button></Link>
+                            <Link to={'/allmovie'} className="btn btn-sm  btn-ghost text-white "><button>All Movies</button></Link>
+                            <Link to={'/addmovie'} className="btn btn-sm  btn-ghost text-white "><button>Add Movie</button></Link>
+                            <Link to={'/favarite'} className="btn btn-sm  btn-ghost text-white "><button>My Favorites</button></Link>
 
                         </div>
                      
