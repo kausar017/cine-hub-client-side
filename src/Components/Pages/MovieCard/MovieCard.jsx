@@ -8,15 +8,15 @@ const MovieCard = ({ moviedata }) => {
 
     return (
         <div className='container mx-auto'>
-            <div className="card card-compact border-2 bg- backdrop-blur-md transition hover:scale-105 overflow-hidden shadow-xl">
+            <div className="  border-2 backdrop-blur-md transition hover:scale-105 overflow-y- shadow-xl rounded-lg">
                 <figure>
                     <img
-                        className='p-2 rounded-lg w-full object-cover md:h-[300px] transition hover:scale-150 overflow-hidden'
+                        className='p-2 rounded-lg w-full h-72 object-cover'
                         src={url}
                         alt={url} />
                 </figure>
                 <div className="card-body text-purple-500">
-                    <h2 className="card-title">Movie Name: {title}</h2>
+                    <h2 className="card-title">{title}</h2>
                     <p>Genre: {genre}</p>
                     <p>Duration: {duration} Minit</p>
                     <p>Movie Release: {Release}</p>
@@ -36,7 +36,7 @@ const MovieCard = ({ moviedata }) => {
                             <p>{rating}</p>
                         </div>
                     </div>
-                    <p>Summary: {Summary}</p>
+                    <p title={Summary}>Summary: {Summary.slice(0, 25)}</p>
                     <div className="card-actions justify-end">
                         <Link to={`/detals/${_id}`} className="btn btn-sm btn-outline  hover:bg-[#F739B6]">Details</Link>
                     </div>

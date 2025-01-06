@@ -1,0 +1,11 @@
+
+#particles-js{
+    background-image: url('/public/partacly/Shiny\ Overlay.svg');
+    background-size: cover;
+    position: fixed;  /* বা absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;  
+}

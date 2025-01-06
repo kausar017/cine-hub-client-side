@@ -44,57 +44,57 @@ const FeaturedMovies = () => {
 
     return (
         <div>
-            
+
             <div>
-                <h1 className="text-center  text-5xl font-bold text-purple-800 py-5">Featured Movies</h1>
+                <h1 className="text-center  text-5xl font-bold text-white py-5">Featured Movies</h1>
                 <div className="border-t-2 w-[20%] mx-auto"></div>
             </div>
 
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 p-4 container mx-auto">
+            <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-5 p-4 container mx-auto">
                 {
                     movie.slice(0, 6).map(movies =>
                         <div key={movies._id}>
-                            <div className="card card-compact border-2 backdrop-blur-md transition hover:scale-105 overflow-hidden  shadow-xl">
-                                <figure>
+                            <div className="border-2 backdrop-blur-md transition hover:scale-105 shadow-xl rounded-lg">
+                                <figure className="relative">
                                     <img
-                                        className='p-2 rounded-lg w-full object-cover md:h-[300px] transition hover:scale-150 overflow-hidden'
+                                        className='p-2 rounded-lg w-full h-72 object-cover'
                                         src={movies.url}
-                                        alt={movies.url} />
-                                </figure>
-                                <div className="card-body text-purple-400">
-                                    <h2 className="card-title">Movie Name: {movies.title}</h2>
-                                    <p>Genre: {movies.genre}</p>
-                                    <p>Duration: {movies.duration} Minit</p>
-                                    <p>Movie Release: {movies.Release}</p>
-                                    <div className='flex flex-row space-x-2'>
-                                        <h4>Rating:</h4>
-                                        <div className='flex space-x-1 items-center'>
-                                            {
-                                                <ReactStars
-                                                    count={5}
-                                                    value={movies.rating}
-                                                    size={30}
-                                                    activeColor="#ffd700"
-                                                    isHalf={true}
-                                                />
-
-                                            }
-                                            <p>{movies.rating}</p>
-                                        </div>
+                                        alt={movies.title} />
+                                    <div className="absolute top-0 left-0 bg-black bg-opacity-50 w-full h-full flex items-center justify-center opacity-0 transition hover:opacity-100">
+                                        <h3 className="text-white text-lg font-bold px-4 text-center">{movies.title}</h3>
                                     </div>
-                                    <p>Summary: {movies.Summary}</p>
-                                    <div className="card-actions justify-end">
-                                        <Link to={`/detals/${movies._id}`} className="btn btn-sm btn-outline  hover:bg-[#F739B6]">Details</Link>
+                                </figure>
+                                <div className="text-white p-3">
+                                    <h2 className="card-title text-lg font-bold">{movies.title}</h2>
+                                    <p>Genre: {movies.genre}</p>
+                                    <p>Duration: {movies.duration} Minutes</p>
+                                    <p>Movie Release: {movies.Release}</p>
+                                    <div className='flex flex-row space-x-2 items-center'>
+                                        <h4 className="text-sm font-semibold">Rating:</h4>
+                                        <ReactStars
+                                            count={5}
+                                            value={movies.rating}
+                                            size={25}
+                                            activeColor="#ffd700"
+                                            isHalf={true}
+                                        />
+                                        <p>{movies.rating}</p>
+                                    </div>
+                                    <p className="line-clamp-3 text-sm">summary: {movies.Summary.slice(0,25)}</p>
+                                    <div className="card-actions justify-end mt-2">
+                                        <Link to={`/detals/${movies._id}`} className="btn btn-sm btn-outline text-white hover:bg-[#F739B6] hover:text-white">Details</Link>
                                     </div>
                                 </div>
                             </div>
-                        </div>)
+                        </div>
+                    )
                 }
-            </div >
+            </div>
+
 
             <div className="flex flex-col justify-center items-center py-3">
                 {
-                    movie ? <Link to={'/allmovie'} className="btn btn-outline text-purple-600 hover:bg-purple-400 hover:text-white">View All Movie</Link> : <p></p>
+                    movie ? <Link to={'/allmovie'} className="btn btn-outline text-white hover:bg-purple-400 hover:text-white">View All Movie</Link> : <p></p>
                 }
 
             </div>

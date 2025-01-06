@@ -37,7 +37,7 @@ const AllMovies = () => {
                         </div>
                     )
                         :
-                        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-3 p-4">
+                        <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-5 p-4 container mx-auto">
                             {
                                 movieAllData.filter((item) => {
                                     return search.toLowerCase() === '' ? item : item.title.toLowerCase().includes(search)

@@ -51,8 +51,8 @@ const Login = () => {
     return (
         <div>
             <div className="flex flex-col justify-center items-center pt-36 min-h-[600px]">
-                <div className="card border-2 w-full max-w-md shrink-0 shadow-xl bg-purple-400 backdrop-blur-md">
-                    <h1 className="text-5xl font-bold text-center mt-5 text-purple-900">Login now!</h1>
+                <div className="card border-2 w-full max-w-md shrink-0 shadow-xl bg- backdrop-blur-md">
+                    <h1 className="text-5xl font-bold text-center mt-5 text-white">Login now!</h1>
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
                             <label className="label">

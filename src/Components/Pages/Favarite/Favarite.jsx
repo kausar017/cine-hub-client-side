@@ -28,7 +28,7 @@ const Favarite = () => {
                 <div className="border-t-2 w-[25%] mx-auto"></div>
             </div>
             <div>
-                {!filtaredData || filtaredData?.length == 0 ? (
+                {filtaredData?.length == 0 ? (
                     <div className="text-4xl  font-bold text-center pt-10 flex flex-col justify-center items-center">
                         Data Not Found
                         <SiDatabricks size={200} color="purple" />
