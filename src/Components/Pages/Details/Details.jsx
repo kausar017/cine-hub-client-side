@@ -127,11 +127,19 @@ const Details = () => {
                                 </div>
                                 <p className='text-lg'><span className='font-bold'>Summary: </span> {Summary}</p>
                             </div>
-                            <div className='flex max-sm:flex-col md:items-center md:justify-center max-sm:space-y-3 space-x-3'>
-                                <button onClick={() => handalDelete(_id)} title='please click the button or delete Movie' className="btn btn-sm bg-red-400 text-white"><MdDeleteOutline size={20} color='red'></MdDeleteOutline>Delete Movie</button>
-                                <Link to={`/update/${_id}`} title='please click the button or update movie data' className="btn btn-sm bg-purple-700/50 text-white"><RxUpdate size={20}></RxUpdate> Update</Link>
-                                <button onClick={handaleFaborite} title='please click the button or add favarite movie' className="btn btn-sm bg-pink-400 text-white"><MdOutlineFavorite size={20} color='#F739B6'></MdOutlineFavorite> Add to Favorite</button>
-                            </div>
+                            {
+                                !user ? <div>
+                                    <Link to={'/login'} className='btn btn-outline text-white hover:bg-white/20'>Please login hear</Link>
+                                </div> :
+
+
+                                    <div className='flex max-sm:flex-col md:items-center md:justify-center max-sm:space-y-3 space-x-3'>
+                                        <button onClick={() => handalDelete(_id)} title='please click the button or delete Movie' className="btn btn-sm bg-red-400 text-white"><MdDeleteOutline size={20} color='red'></MdDeleteOutline>Delete Movie</button>
+                                        <Link to={`/update/${_id}`} title='please click the button or update movie data' className="btn btn-sm bg-purple-700/50 text-white"><RxUpdate size={20}></RxUpdate> Update</Link>
+                                        <button onClick={handaleFaborite} title='please click the button or add favarite movie' className="btn btn-sm bg-pink-400 text-white"><MdOutlineFavorite size={20} color='#F739B6'></MdOutlineFavorite> Add to Favorite</button>
+                                    </div>
+                            }
+
                         </div>
                     </div>
                 </div>
