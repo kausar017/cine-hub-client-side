@@ -23,17 +23,17 @@ const PopularActors = () => {
 
 
     return (
-        <div className="py-[10px] w-9/12 mx-auto ">
+        <div className="py-[10px] w-11/12 xl:w-9/12 mx-auto ">
             <div className="py-8">
                 <h1 className="text-white text-center text-5xl font-bold">Featured Actors</h1>
                 <div className="border-t-2 w-[30%] mx-auto"></div>
 
             </div>
-            <div className="grid md:grid-cols-4 gap-5 ">
+            <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2  gap-5 ">
                 {
                     actor.map((pepole) =>
                         <div key={pepole.id}>
-                            <div className="card card-compact border-2 shadow-xl transition hover:scale-110">
+                            <div className="card border-2 shadow-xl transition hover:scale-110">
                                 <figure>
                                     <img
                                         className="transition hover:scale-150 w-full h-[200px]"

@@ -37,7 +37,7 @@ const Navbar = () => {
     };
 
     const link = <>
-        <div className="space-x-3 flex max-sm:flex-col bg-transparent">
+        <div className="space-x-3 flex xl:flex-row lg:flex-row md:flex-col max-sm:flex-col bg-transparent">
             <NavLink onClick={() => scrollToSection('bannar')} to={'/'} className="btn btn-sm  btn-outline text-white hover:bg-purple-500"><button>Home</button></NavLink>
             <NavLink to={'/allmovie'} className="btn btn-sm hover:bg-purple-500 btn-outline text-white "><button>All Movies</button></NavLink>
 
@@ -55,7 +55,7 @@ const Navbar = () => {
                     <NavLink to={'/favarite'} className="btn btn-sm hover:bg-purple-500 btn-outline text-white "><button>My Favorites</button></NavLink>
             }
             <botton onClick={() => scrollToSection('about')} className="btn btn-sm hover:bg-purple-500 btn-outline text-white ">About Me</botton>
-            <button  onClick={() => scrollToSection('section1')} className="btn btn-sm hover:bg-purple-500 btn-outline text-white ">Contact </button>
+            <button onClick={() => scrollToSection('section1')} className="btn btn-sm hover:bg-purple-500 btn-outline text-white ">Contact </button>
 
 
         </div>
@@ -68,7 +68,7 @@ const Navbar = () => {
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-8 w-8 "
+                                className="h-8 w-8 text-white"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor">
