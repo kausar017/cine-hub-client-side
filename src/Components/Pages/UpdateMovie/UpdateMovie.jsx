@@ -2,7 +2,6 @@ import { useLoaderData, useParams } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { useState } from "react";
 import Swal from "sweetalert2";
-import bg from '../../../assets/polygon-scatter-haikei.png'
 import { useEffect } from "react";
 
 const UpdateMovie = () => {
@@ -89,15 +88,9 @@ const UpdateMovie = () => {
         <div>
             <div>
                 <div className="flex flex-col justify-center pt-32 items-center min-h-screen lg:w-8/12 mx-auto p-3">
-                    <div className="card border-2 rounded-xl bg-purple-400 w-full py-5 backdrop-blur-md" style={{
-                        backgroundImage: `url(${bg})`,
-                        backgroundSize: "cover",
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "center",
-
-                    }}>
+                    <div className="card border-2 rounded-xl w-full py-5 backdrop-blur-md" >
                         <form onSubmit={handalUpdate} className="card-body">
-                            <h1 className="text-center text-4xl font-bold text-purple-900">Update Movie </h1>
+                            <h1 className="text-center text-4xl font-bold text-white">Update Movie </h1>
                             <div className="border-t-2 w-[20%] mx-auto"></div>
                             <div className="form-control grid md:grid-cols-2 md:space-x-2">
                                 <div>
@@ -169,7 +162,7 @@ const UpdateMovie = () => {
                             </div>
 
                             <div className="form-control mt-6">
-                                <button className="btn btn-outline bg-white text-purple-500 hover:bg-red-500/30">Update Movie</button>
+                                <button className="btn btn-outline text-purple-500 hover:bg-white/20">Update Movie</button>
                             </div>
                         </form>
                     </div>

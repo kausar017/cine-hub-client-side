@@ -20,7 +20,7 @@ const MovieCard = ({ moviedata }) => {
                     <p>Genre: {genre}</p>
                     <p>Duration: {duration} Minit</p>
                     <p>Movie Release: {Release}</p>
-                    <div className='flex flex-row space-x-2'>
+                    <div className='flex flex-row items-center space-x-2'>
                         <h4>Rating:</h4>
                         <div className='flex space-x-1 items-center'>
                             {

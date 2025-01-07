@@ -55,7 +55,7 @@ const Navbar = () => {
                     <NavLink to={'/favarite'} className="btn btn-sm hover:bg-purple-500 btn-outline text-white "><button>My Favorites</button></NavLink>
             }
             <botton onClick={() => scrollToSection('about')} className="btn btn-sm hover:bg-purple-500 btn-outline text-white ">About Me</botton>
-            <button onClick={() => scrollToSection('section1')} className="btn btn-sm hover:bg-purple-500 btn-outline text-white ">Contact </button>
+            <button  onClick={() => scrollToSection('section1')} className="btn btn-sm hover:bg-purple-500 btn-outline text-white ">Contact </button>
 
 
         </div>

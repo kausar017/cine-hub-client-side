@@ -36,7 +36,7 @@ const Router = createBrowserRouter([
       },
       {
         path: '/detals/:id',
-        element: <PrivetRout><Details></Details></PrivetRout>,
+        element: <Details></Details>,
         loader: ({ params }) => fetch(`https://cenehub.vercel.app/movies/${params.id}`)
       },
       {
